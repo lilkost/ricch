@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ricci</title>
+    <link rel="stylesheet" href="local/templates/main/assets/css/style.min.css">
+    <link rel="stylesheet" href="local/templates/main/assets/css/media.min.css">
+    <script src="local/templates/main/assets/js/libs.min.js"></script>
+    <script src="local/templates/main/assets/js/index.js" type="module"></script>
+</head>
+
+<body>
+
+<!-- wrapper -->
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__inner container">
+                <a href="/" class="header__logo">
+                    <svg width="109" height="50" viewBox="0 0 109 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M29.2818 35.4359C33.9792 33.4876 37.8241 31.5149 40.8167 29.5178C43.8031 27.5268 46.0292 25.4445 47.4825 23.283C47.5316 23.2099 47.5684 23.1369 47.6174 23.0699H35.6594V1.07769C32.9244 0.365319 29.8889 0 26.5345 0C21.6655 0 17.2747 0.754993 13.3685 2.25889C9.46216 3.76279 6.32855 5.93035 3.97987 8.74939C1.62506 11.5684 0.300484 14.9294 0 18.8322H16.4039C16.5327 17.6449 16.9375 16.5611 17.6243 15.5869C18.305 14.6128 19.3229 13.8273 20.6659 13.2306C22.0089 12.64 23.7505 12.3417 25.8906 12.3417C27.4299 12.3417 28.7544 12.5426 29.8644 12.9445C30.9743 13.3463 31.8206 13.9126 32.397 14.631C32.9735 15.3556 33.2617 16.2445 33.2617 17.3039C33.2617 18.2781 32.9489 19.1793 32.3296 20.0073C31.7102 20.8354 30.6125 21.7548 29.0304 22.7716C27.4483 23.7884 25.167 25.0852 22.1745 26.65L1.41043 37.6583V48.8553H50.8737V36.1301H27.5954L29.2818 35.4299V35.4359Z" fill="#F1F1F5"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M104.599 11.8609C106.923 15.6176 108.088 19.9954 108.088 25.0002L108.082 24.988C108.082 29.9929 106.923 34.3767 104.593 38.1274C104.311 38.5901 104.004 39.0407 103.691 39.479L103.571 39.4073L103.691 39.4909C101.447 42.6022 98.4789 45.0681 94.7934 46.8886C90.5866 48.9649 85.6869 50.006 80.0881 50.006C74.4893 50.006 69.5895 48.9649 65.3828 46.8886C61.1699 44.8063 57.9075 41.8898 55.5772 38.1392C53.253 34.3825 52.0879 30.0048 52.0879 24.9999C52.0879 24.3484 52.1124 23.703 52.1492 23.0698H80.0879V2.30174V-0.00585938C85.6867 -0.00585938 90.5864 1.0353 94.7932 3.11153C99 5.19385 102.268 8.11031 104.599 11.8609Z" fill="#F1F1F5"/>
+                        <path d="M44.2317 17.5901C44.2317 16.1654 44.2317 14.7406 44.2317 13.3098C44.2317 13.2428 44.2317 13.1759 44.2501 13.115C44.4647 12.5305 44.851 12.1225 45.4643 11.9642C46.1204 11.7937 46.7704 11.8607 47.4082 12.086C47.4818 12.1103 47.5554 12.1347 47.6351 12.1651V8.69461C47.3162 8.67026 47.0035 8.62763 46.6907 8.61546C45.7341 8.57284 44.9921 8.96251 44.4831 9.7723C44.3053 10.0524 44.1826 10.369 44.0416 10.6612C43.9373 10.0646 43.8269 9.4496 43.7165 8.82247H40.6504V17.7728H44.2317V17.578V17.5901Z" fill="#F1F1F5"/>
+                        <path d="M56.5394 17.8702C57.2753 18.0407 58.0234 18.059 58.7716 18.0042C59.6853 17.9433 60.5622 17.7606 61.3962 17.3588C61.4882 17.3161 61.525 17.2674 61.525 17.1639C61.525 16.342 61.525 15.5261 61.525 14.7041C61.525 14.6615 61.525 14.6128 61.5189 14.558C61.4821 14.5763 61.4514 14.5823 61.433 14.5945C60.5561 15.0816 59.6056 15.2582 58.6122 15.2338C58.2933 15.2277 57.9867 15.1547 57.7046 14.9964C57.0607 14.6432 56.8093 14.0648 56.7909 13.3646C56.7663 12.2687 57.4041 11.5076 58.4588 11.4162C59.3358 11.3432 60.182 11.4893 60.9854 11.8485C61.1387 11.9155 61.2797 11.9947 61.4453 12.0799V11.946C61.4453 11.057 61.4453 10.1681 61.4453 9.27913C61.4453 9.16953 61.4085 9.12691 61.3104 9.09647C60.6787 8.88945 60.0349 8.7555 59.3787 8.68853C58.5508 8.60329 57.7168 8.56675 56.8951 8.73115C55.4295 9.02949 54.3257 9.81493 53.6695 11.1849C53.1973 12.1712 53.1115 13.2246 53.2648 14.2962C53.5223 16.1167 54.7611 17.4562 56.5456 17.8763L56.5394 17.8702Z" fill="#F1F1F5"/>
+                        <path d="M65.6297 17.8703C66.3717 18.0408 67.1198 18.0591 67.8741 18.0043C68.7878 17.9434 69.6647 17.7607 70.4926 17.3589C70.5784 17.3163 70.6152 17.2736 70.6152 17.1762C70.6152 16.3482 70.6152 15.5201 70.6152 14.686C70.6152 14.6494 70.6152 14.6068 70.603 14.5581C70.5478 14.5825 70.511 14.6007 70.4742 14.619C69.5298 15.1183 68.518 15.3131 67.4571 15.2096C66.9236 15.1548 66.482 14.9112 66.1816 14.4485C65.8872 13.9919 65.832 13.4865 65.8995 12.9568C65.9976 12.1896 66.5127 11.6173 67.2609 11.4651C68.0029 11.3129 68.7326 11.4164 69.4501 11.6234C69.818 11.733 70.1676 11.9035 70.5294 12.0435C70.5294 12.0435 70.5294 12.0313 70.5294 12.0191C70.5294 11.0937 70.5294 10.1621 70.5294 9.23662C70.5294 9.14529 70.4865 9.12094 70.4129 9.09658C69.7751 8.88348 69.1251 8.74344 68.4567 8.67646C67.6288 8.59731 66.8071 8.55469 65.9853 8.71909C64.5381 9.01134 63.4404 9.77851 62.7843 11.118C62.2875 12.1226 62.1956 13.1942 62.3489 14.2902C62.6003 16.0924 63.8452 17.4502 65.6174 17.8642L65.6297 17.8703Z" fill="#F1F1F5"/>
+                        <path d="M52.199 8.84668H48.6484V17.7787H52.199V8.84668Z" fill="#F1F1F5"/>
+                        <path d="M75.1698 8.84082H71.6191V17.7729H75.1698V8.84082Z" fill="#F1F1F5"/>
+                        <path d="M52.2228 5.37012H48.666V7.86038H52.2228V5.37012Z" fill="#F1F1F5"/>
+                        <path d="M75.1564 5.37012H71.5996V7.86038H75.1564V5.37012Z" fill="#F1F1F5"/>
+                    </svg>
+                </a>
+                <nav class="header__nav">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <div class="header__nav-accordion">
+                                <div class="header__nav-accordion-top">
+                                    Недвижимость
+                                    <div class="header__nav-accordion-top_icon">
+                                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.45053 1.02744V14.9638H2.93462C3.06341 14.9638 3.16587 15.0048 3.24197 15.0867C3.32393 15.1687 3.36491 15.2682 3.36491 15.3853V16H0.133301V0H3.36491V0.61471C3.36491 0.731797 3.32393 0.831321 3.24197 0.913283C3.16587 0.98939 3.06341 1.02744 2.93462 1.02744H1.45053Z" fill="white"/>
+                                            <path d="M13.1087 8.64464H9.92956V12H8.52815V8.64464H5.36499V7.34735H8.52815V4H9.92956V7.34735H13.1087V8.64464Z" fill="white"/>
+                                            <path d="M18.3403 16H15.1086V15.3853C15.1086 15.2682 15.1467 15.1687 15.2228 15.0867C15.3048 15.0048 15.4101 14.9638 15.5389 14.9638H17.023V1.02744H15.5389C15.4101 1.02744 15.3048 0.98939 15.2228 0.913283C15.1467 0.831321 15.1086 0.731797 15.1086 0.61471V0H18.3403V16Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="header__nav-accordion-body">
+                                    <ul class="header__nav-accordion-body-list">
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Офисная недвижимость
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Складская недвижимость
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Площадки под девелопмент
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Жилая недвижимость
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Загородная недвижимость
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Курортная недвижимость
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Зарубежная недвижимость
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__nav-item">
+                            <div class="header__nav-accordion">
+                                <div class="header__nav-accordion-top">
+                                    УСЛУГИ
+                                    <div class="header__nav-accordion-top_icon">
+                                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.45053 1.02744V14.9638H2.93462C3.06341 14.9638 3.16587 15.0048 3.24197 15.0867C3.32393 15.1687 3.36491 15.2682 3.36491 15.3853V16H0.133301V0H3.36491V0.61471C3.36491 0.731797 3.32393 0.831321 3.24197 0.913283C3.16587 0.98939 3.06341 1.02744 2.93462 1.02744H1.45053Z" fill="white"/>
+                                            <path d="M13.1087 8.64464H9.92956V12H8.52815V8.64464H5.36499V7.34735H8.52815V4H9.92956V7.34735H13.1087V8.64464Z" fill="white"/>
+                                            <path d="M18.3403 16H15.1086V15.3853C15.1086 15.2682 15.1467 15.1687 15.2228 15.0867C15.3048 15.0048 15.4101 14.9638 15.5389 14.9638H17.023V1.02744H15.5389C15.4101 1.02744 15.3048 0.98939 15.2228 0.913283C15.1467 0.831321 15.1086 0.731797 15.1086 0.61471V0H18.3403V16Z" fill="white"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="header__nav-accordion-body">
+                                    <ul class="header__nav-accordion-body-list">
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Консалтинг 
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Оценка 
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Инвестиционный фонд 
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Asset Management 
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Маркетинг 
+                                            </a>
+                                        </li>
+                                        <li class="header__nav-accordion-body-item">
+                                            <a href="#!" class="header__nav-accordion-body-link">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="#1E1F45"/>
+                                                    <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                                                </svg>
+                                                Архтектура и дизайн 
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#!" class="header__nav-link">АНАЛИТИКА</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#!" class="header__nav-link">О КОМПАНИИ</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#!" class="header__nav-link">КАРЬЕРА</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#!" class="header__nav-link">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="tel:++74957907171" class="header__phone">+7 (495) 790 71 71</a>
+                <div class="header__lang">
+                    <button class="header__lang-btn is-active" type="button" aria-label="Кнопка смены языка Ru">RU</button>
+                    <button class="header__lang-btn" type="button" aria-label="Кнопка смены языка Eng">ENG</button>
+                </div>
+                <a href="#!" class="header__social-link" aria-label="Ссылка на Telegram">
+                    <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.3112 12.8789L8.31186 12.8778L17.3574 4.62057C17.7544 4.26402 17.2706 4.09035 16.7436 4.41368L5.57936 11.5389L0.757025 10.0161C-0.28424 9.69363 -0.291881 8.96968 0.990802 8.44917L19.7823 1.11907C20.6407 0.724863 21.469 1.32777 21.1414 2.6566L17.9412 17.9123C17.7177 18.9962 17.0703 19.2556 16.1731 18.7548L11.2981 15.1112L8.95532 17.4157C8.94785 17.423 8.94042 17.4304 8.93303 17.4376C8.67099 17.6957 8.45423 17.9091 7.9799 17.9091L8.3112 12.8789Z" fill="white"/>
+                    </svg>
+                </a>
+                <search class="header__search">
+                    <form class="header__search-form" action="#!">
+                        <label class="header__search-label" for="">
+                            <input class="header__search-input" type="search" placeholder="Что будем искать?">
+                        </label>
+                        <button class="header__search-btn" type="button" aria-label="Кнопка для открытия окна с строкой поиска">
+                            <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.54724 0C14.5178 0 18.5472 4.02944 18.5472 9C18.5472 11.1248 17.8109 13.0776 16.5795 14.6172L20.2543 18.2929C20.6449 18.6834 20.6449 19.3166 20.2543 19.7071C19.8939 20.0676 19.3266 20.0953 18.9343 19.7903L18.8401 19.7071L15.1644 16.0323C13.6248 17.2637 11.672 18 9.54724 18C4.57668 18 0.547241 13.9706 0.547241 9C0.547241 4.02944 4.57668 0 9.54724 0ZM9.54724 2C5.68125 2 2.54724 5.13401 2.54724 9C2.54724 12.866 5.68125 16 9.54724 16C13.4132 16 16.5472 12.866 16.5472 9C16.5472 5.13401 13.4132 2 9.54724 2Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </form>
+                </search>
+                <button class="header__burger" type="button" aria-label="Кнопка открытия выпадающего меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </header>
+<main class="main">
+    <div class="top-page top-page_big-size" style="background-image: url(local/templates/main/assets/images/delete/top-page/bg.jpg);">
+        <div class="top-page__inner container">
+            <h2 class="top-page__title top-page__title_border">
+                АНАЛИТИКА<br> И НОВОСТИ РЫНКА
+            </h2>
+            <div class="top-page__box">
+                <img src="local/templates/main/assets/images/no-delete/top-page-logo-min.png" alt="">
+                <div class="top-page__logo-text">
+                    аналитический<br>
+                    центр
+                </div>
+            </div>
+        </div>
+        <img src="local/templates/main/assets/images/no-delete/top-page-logo.svg" alt="" class="top-page__decor-logo">
+    </div>
+    <div class="analitics-info container">
+        <div class="analitics-info__top">
+            <button class="analitics-info__top-btn color_accent" type="button" data-id="id1"># Исследование рынка и конкуренции в локации проекта</button>
+            <button class="analitics-info__top-btn color_accent" type="button" data-id="id2"># Разработка рекомендаций по концепции проекта</button>
+            <button class="analitics-info__top-btn color_accent" type="button" data-id="id3"># Анализ цен и темпов реализации проекта</button>
+        </div>
+        <div class="analitics-info__bodys">
+            <div class="analitics-info__item is-active" data-body-id="id1">
+                <div class="analitics-info__item-left">
+                    <h2 class="analitics-info__item-title title_page color_accent">
+                        Мы верим, что каждый<br> 
+                        проект уникален, и наша<br> 
+                        задача — раскрыть его<br> 
+                        потенциал
+                    </h2>
+                </div>
+                <div class="analitics-info__item-right">
+                    <p class="analitics-info__item-text text_middle color_accent">
+                        Предложим комплексную стратегию<br>
+                        и тактические шаги по развитию<br> 
+                        самых амбициозных девелоперских<br> проектов
+                    </p>
+                </div>
+            </div>
+            <div class="analitics-info__item" data-body-id="id2">
+                <div class="analitics-info__item-left">
+                    <h2 class="analitics-info__item-title title_page color_accent">
+                        Мы верим, что каждый<br> 
+                        проект уникален, и наша<br> 
+                        задача — раскрыть его<br> 
+                        потенциал
+                    </h2>
+                </div>
+                <div class="analitics-info__item-right">
+                    <p class="analitics-info__item-text text_middle color_accent">
+                        Предложим комплексную стратегию<br>
+                        и тактические шаги по развитию<br> 
+                        самых амбициозных девелоперских<br> проектов
+                    </p>
+                </div>
+            </div>
+            <div class="analitics-info__item" data-body-id="id3">
+                <div class="analitics-info__item-left">
+                    <h2 class="analitics-info__item-title title_page color_accent">
+                        Мы верим, что каждый<br> 
+                        проект уникален, и наша<br> 
+                        задача — раскрыть его<br> 
+                        потенциал
+                    </h2>
+                </div>
+                <div class="analitics-info__item-right">
+                    <p class="analitics-info__item-text text_middle color_accent">
+                        Предложим комплексную стратегию<br>
+                        и тактические шаги по развитию<br> 
+                        самых амбициозных девелоперских<br> проектов
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <search class="analitics-search container" title="search">
+        <form action="" class="analitics-search__form">
+            <label class="analitics-search__label">
+                <input type="number" class="analitics-search__input" placeholder="Год">
+            </label>
+            <label class="analitics-search__label">
+                <input type="text" class="analitics-search__input" placeholder="Город">
+            </label>
+            <label class="analitics-search__label">
+                <input type="text" class="analitics-search__input" placeholder="Поиск по ключевой фразе">
+                <button class="analitics-search__btn" type="submit" aria-label="Кнопка для формы поиска">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.5 0C14.4706 0 18.5 4.02944 18.5 9C18.5 11.1248 17.7637 13.0776 16.5323 14.6172L20.2071 18.2929C20.5976 18.6834 20.5976 19.3166 20.2071 19.7071C19.8466 20.0676 19.2794 20.0953 18.8871 19.7903L18.7929 19.7071L15.1172 16.0323C13.5776 17.2637 11.6248 18 9.5 18C4.52944 18 0.5 13.9706 0.5 9C0.5 4.02944 4.52944 0 9.5 0ZM9.5 2C5.63401 2 2.5 5.13401 2.5 9C2.5 12.866 5.63401 16 9.5 16C13.366 16 16.5 12.866 16.5 9C16.5 5.13401 13.366 2 9.5 2Z" fill="#1E1F45"/>
+                    </svg>
+                </button>
+            </label>
+        </form>
+    </search>
+    <div class="analitics-articles container">
+        <div class="analitics-articles__filter">
+            <button class="analitics-articles__filter-btn" type="button"># Инвестиции</button>
+            <button class="analitics-articles__filter-btn" type="button"># Офисы</button>
+            <button class="analitics-articles__filter-btn" type="button"># Жилая недвижимость</button>
+            <button class="analitics-articles__filter-btn" type="button"># Загородная недвижимость</button>
+            <button class="analitics-articles__filter-btn" type="button"># Склады</button>
+            <button class="analitics-articles__filter-btn" type="button"># Площадки под девелопмент</button>
+            <button class="analitics-articles__filter-btn" type="button"># Зарубежная недвижимость</button>
+            <button class="analitics-articles__filter-btn" type="button"># Аналитика</button>
+            <button class="analitics-articles__filter-btn" type="button"># Новости</button>
+            <button class="analitics-articles__filter-btn" type="button"># События</button>
+            <button class="analitics-articles__filter-btn" type="button"># Периодический отчет</button>
+            <button class="analitics-articles__filter-btn" type="button"># Мнение эксперта</button>
+            <button class="analitics-articles__filter-btn" type="button"># Мнение эксперта</button>
+            <button class="analitics-articles__filter-btn" type="button"># Анонс</button>
+        </div>
+        <ul class="analitics-articles__list">
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР ИНВЕСТИЦИННОГО РЫНКА I<br> КВАРТАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Инвестиции</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/1.png" alt="">
+                </picture>
+            </li>
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР РЫНКА ОФИСНОЙ<br> НЕДВИЖИМОСТИ II КВАТРАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Офисы</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/2.png" alt="">
+                </picture>
+            </li>
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР ИНВЕСТИЦИННОГО РЫНКА I<br> КВАРТАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Инвестиции</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/3.png" alt="">
+                </picture>
+            </li>
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР РЫНКА ОФИСНОЙ<br> НЕДВИЖИМОСТИ II КВАТРАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Офисы</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/4.png" alt="">
+                </picture>
+            </li>
+            <li class="analitics-articles__banner" style="background-image: url(../local/templates/main/assets/images/delete/news/bg.png);">
+                <h3 class="analitics-articles__banner-title title_page color_white">
+                    Закажите собственное<br> исследование рынка
+                </h3>
+                <p class="analitics-articles__banner-text text_min color_white">
+                    Аналитический центр сочетает в себе направления <br>
+                    стратегического консалтинга, аналитики и оценки. Синергия <br>
+                    этих компетенций позволяет нашим клиентам и партнерам <br>
+                    принимать взвешенные и обоснованные решения.
+                </p>
+                <button class="analitics-articles__banner-btn btn btn_white" type="button">
+                    <div class="btn_icon">
+                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 20.5003L1.30841 19.9396L1.35514 18.5377L18.5514 19.0517L18.0841 1.9022L19.486 1.85547L20 20.5003Z" fill="#1E1F45"/>
+                            <path d="M19.7541 19.3063L0.953125 0.505371L-0.0381367 1.49663L18.7628 20.2976L19.7541 19.3063Z" fill="#1E1F45"/>
+                        </svg>
+                    </div>
+                    зАКАЗАТЬ ИССЛЕДОВАНИЕ
+                </button>
+                <a href="#!" class="analitics-articles__social-link telegram-link" title="link telegram">
+                    <svg width="193" height="194" viewBox="0 0 193 194" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_1127_8041)">
+                      <path d="M114.772 1.65158L112.686 19.7787L111.362 19.6175L112.365 10.9165L101.092 9.62749L100.089 18.2882L98.7656 18.1271L100.852 0L102.176 0.16113L101.213 8.62043L112.526 9.94975L113.488 1.49045L114.772 1.65158Z" fill="white"/>
+                      <path d="M135.233 17.8854C134.752 19.2147 134.11 20.3426 133.307 21.2691C132.505 22.1956 131.622 22.9207 130.62 23.4041C129.617 23.8875 128.533 24.1695 127.41 24.2097C126.287 24.25 125.083 24.0486 123.88 23.6055C122.676 23.1624 121.674 22.5179 120.831 21.7525C119.989 20.9469 119.347 20.0606 118.906 19.0133C118.464 17.966 118.264 16.8783 118.264 15.6296C118.264 14.4211 118.504 13.1321 119.026 11.8028C119.507 10.4734 120.149 9.38582 120.951 8.45932C121.754 7.53283 122.636 6.80774 123.639 6.32436C124.642 5.84097 125.725 5.55899 126.849 5.51871C128.012 5.47842 129.175 5.67984 130.379 6.12294C131.582 6.56605 132.585 7.21057 133.468 7.97593C134.35 8.7413 134.952 9.66779 135.393 10.7151C135.835 11.7625 136.035 12.8904 136.035 14.0989C135.955 15.3073 135.714 16.5561 135.233 17.8854ZM133.949 17.402C134.39 16.1935 134.631 15.0656 134.671 14.0183C134.711 12.9307 134.511 11.9639 134.19 11.0777C133.829 10.1915 133.307 9.4261 132.585 8.7413C131.863 8.0565 131.021 7.53283 129.978 7.17029C128.975 6.80774 127.972 6.60633 127.009 6.64661C126.046 6.6869 125.124 6.92859 124.281 7.33141C123.439 7.77452 122.676 8.37876 121.995 9.22469C121.313 10.0303 120.751 11.0777 120.31 12.2459C119.868 13.4543 119.628 14.5822 119.628 15.6699C119.628 16.7575 119.788 17.7243 120.149 18.6105C120.51 19.4967 121.032 20.2621 121.754 20.9469C122.476 21.5914 123.318 22.1151 124.321 22.5179C125.324 22.8804 126.327 23.0818 127.29 23.0415C128.253 23.0013 129.175 22.7596 130.018 22.3567C130.86 21.9136 131.622 21.3094 132.304 20.4635C132.946 19.6175 133.508 18.6105 133.949 17.402Z" fill="white"/>
+                      <path d="M149.113 15.8308C149.995 16.3947 150.677 16.9989 151.199 17.5629C151.72 18.1671 152.081 18.7714 152.282 19.3756C152.482 19.9798 152.523 20.5841 152.402 21.1883C152.282 21.7925 152.041 22.3968 151.64 23.0413C151.359 23.4441 151.038 23.7664 150.677 24.0484C150.316 24.3303 149.875 24.5318 149.394 24.6929C148.912 24.854 148.431 24.8943 147.869 24.8943C147.348 24.8943 146.786 24.7734 146.224 24.572C147.307 25.5388 147.949 26.5459 148.19 27.5932C148.431 28.6406 148.23 29.6476 147.548 30.695C147.107 31.3395 146.625 31.8631 146.064 32.2257C145.502 32.5882 144.86 32.8299 144.218 32.8702C143.537 32.9508 142.814 32.8702 142.052 32.6285C141.29 32.3868 140.488 32.0243 139.685 31.5006L134.791 28.2377L144.74 12.9707L149.113 15.8308ZM140.287 30.5741C141.611 31.4603 142.814 31.8229 143.857 31.702C144.9 31.5812 145.783 30.9769 146.465 29.9296C146.786 29.4462 146.987 28.9628 147.027 28.4391C147.107 27.9155 147.027 27.4321 146.866 26.9487C146.706 26.4653 146.425 25.9819 145.984 25.4985C145.582 25.0151 145.061 24.572 144.419 24.1692L140.608 21.6717L136.436 28.1169L140.287 30.5741ZM145.262 14.582L141.21 20.8258L144.499 23.001C145.181 23.4441 145.863 23.7664 146.465 23.9275C147.067 24.0886 147.628 24.0886 148.15 24.0081C148.671 23.9275 149.113 23.7261 149.514 23.4844C149.915 23.2024 150.236 22.8802 150.477 22.4773C151.159 21.43 151.319 20.4632 151.038 19.4965C150.717 18.5297 149.915 17.6032 148.551 16.717L145.262 14.582Z" fill="white"/>
+                      <path d="M165.2 42.1352C164.197 43.102 163.154 43.8673 162.031 44.3507C160.908 44.8341 159.825 45.1161 158.701 45.1161C157.578 45.1161 156.495 44.9147 155.452 44.4716C154.409 44.0285 153.406 43.3034 152.524 42.4172C151.641 41.4907 150.959 40.4836 150.558 39.4363C150.117 38.3486 149.956 37.261 149.996 36.1734C150.036 35.0455 150.317 33.9579 150.879 32.83C151.44 31.702 152.162 30.695 153.165 29.6879C154.168 28.7212 155.211 27.9558 156.335 27.4724C157.458 26.989 158.541 26.707 159.664 26.707C160.787 26.707 161.871 26.9084 162.914 27.3516C163.957 27.7947 164.96 28.4795 165.842 29.406C166.725 30.3324 167.407 31.3395 167.808 32.3869C168.249 33.4745 168.41 34.5621 168.369 35.69C168.329 36.8179 168.008 37.9055 167.487 39.0334C166.965 40.1211 166.203 41.1281 165.2 42.1352ZM164.278 41.1281C165.2 40.2419 165.882 39.3154 166.364 38.3486C166.845 37.3819 167.126 36.4151 167.166 35.4886C167.206 34.5621 167.086 33.5953 166.725 32.7091C166.364 31.7826 165.802 30.9367 165.04 30.1713C164.278 29.406 163.475 28.8017 162.553 28.4392C161.67 28.0364 160.747 27.8752 159.785 27.9155C158.822 27.9558 157.859 28.1975 156.896 28.6406C155.933 29.0837 154.971 29.7685 154.088 30.6547C153.165 31.5409 152.483 32.4674 152.002 33.4342C151.521 34.401 151.28 35.3677 151.2 36.2942C151.16 37.261 151.32 38.1875 151.681 39.0737C152.042 39.9599 152.604 40.8059 153.366 41.6115C154.128 42.3769 154.93 42.9811 155.853 43.3839C156.736 43.7868 157.658 43.9479 158.621 43.9076C159.584 43.8673 160.547 43.6256 161.51 43.1825C162.472 42.7394 163.355 42.0143 164.278 41.1281Z" fill="white"/>
+                      <path d="M169.852 60.9071C169.892 60.9877 169.892 61.0683 169.892 61.1488L169.692 61.8739C169.17 61.7531 168.649 61.5919 168.127 61.3905C167.606 61.1891 167.124 60.9071 166.683 60.5849C166.202 60.2626 165.76 59.8598 165.319 59.3764C164.878 58.893 164.477 58.3291 164.075 57.6845C163.434 56.5969 163.032 55.5093 162.832 54.3814C162.671 53.2535 162.752 52.1659 163.032 51.0782C163.353 50.0309 163.875 48.9835 164.637 48.0571C165.399 47.0903 166.402 46.2443 167.606 45.5193C168.769 44.7942 169.973 44.3511 171.176 44.1094C172.379 43.8677 173.503 43.908 174.626 44.1094C175.709 44.3511 176.752 44.7942 177.675 45.5193C178.598 46.2041 179.44 47.1306 180.082 48.2182C180.724 49.2655 181.125 50.3129 181.285 51.3602C181.446 52.4076 181.446 53.4146 181.245 54.462L180.563 54.4217C180.443 54.4217 180.323 54.3411 180.282 54.2203C180.242 54.1397 180.242 53.9383 180.282 53.6563C180.323 53.3743 180.323 52.9715 180.323 52.4881C180.323 52.0047 180.202 51.4811 180.042 50.8365C179.881 50.2323 179.6 49.5475 179.159 48.7821C178.598 47.8556 177.916 47.0903 177.113 46.486C176.311 45.8818 175.468 45.5193 174.506 45.3178C173.543 45.1164 172.58 45.1164 171.497 45.3178C170.454 45.5193 169.371 45.9624 168.288 46.6069C167.204 47.2917 166.322 48.0168 165.64 48.8627C164.958 49.7086 164.517 50.5948 164.236 51.5213C163.995 52.4478 163.915 53.3743 164.075 54.3411C164.196 55.3079 164.557 56.1941 165.078 57.0803C165.399 57.6443 165.76 58.1277 166.081 58.4902C166.402 58.893 166.763 59.2153 167.124 59.4973C167.485 59.7792 167.886 60.0209 168.288 60.1821C168.689 60.3835 169.13 60.5446 169.611 60.6654C169.652 60.6654 169.692 60.7057 169.732 60.746C169.772 60.8266 169.812 60.8669 169.852 60.9071Z" fill="white"/>
+                      <path d="M188.548 71.0178L186.381 65.0157L170.375 70.8567L169.934 69.6079L185.94 63.767L183.734 57.7246L184.777 57.3218L189.591 70.6553L188.548 71.0178Z" fill="white"/>
+                      <path d="M192.999 90.3535L175.027 92.8913L174.827 91.562L189.589 89.4673C189.87 89.427 190.151 89.3867 190.432 89.3867C190.713 89.3464 191.034 89.3464 191.314 89.3464C191.034 89.2659 190.793 89.1853 190.552 89.1047C190.311 89.0242 190.111 88.9436 189.91 88.8227L173.703 80.4843C173.583 80.444 173.463 80.3634 173.382 80.2829C173.302 80.2023 173.222 80.0815 173.222 79.9606L173.102 78.9938L191.074 76.4561L191.274 77.7854L176.511 79.8801C176.231 79.9203 175.95 79.9606 175.669 80.0009C175.388 80.0412 175.107 80.0412 174.786 80.0412C175.067 80.1218 175.308 80.2023 175.549 80.2829C175.789 80.3634 175.99 80.444 176.191 80.5649L192.398 88.9033C192.518 88.9436 192.638 89.0242 192.718 89.1047C192.799 89.1853 192.879 89.3061 192.879 89.427L192.999 90.3535Z" fill="white"/>
+                      <path d="M191.876 111.421C191.555 113.556 190.873 115.046 189.79 116.013C188.707 116.94 187.303 117.302 185.618 117.02C184.816 116.899 184.134 116.658 183.532 116.255C182.93 115.852 182.409 115.328 182.008 114.724C181.606 114.12 181.326 113.355 181.205 112.549C181.045 111.703 181.045 110.817 181.205 109.81L181.727 106.466L174.506 105.379L174.706 104.049L192.679 106.748L191.876 111.421ZM182.208 109.971C182.088 110.776 182.088 111.502 182.208 112.146C182.329 112.791 182.569 113.395 182.89 113.878C183.211 114.362 183.612 114.764 184.134 115.087C184.655 115.409 185.177 115.61 185.819 115.691C187.183 115.892 188.306 115.651 189.188 114.885C190.071 114.16 190.633 112.952 190.873 111.26L191.395 107.916L182.73 106.627L182.208 109.971Z" fill="white"/>
+                      <path d="M166.203 133.818L166.685 132.57L183.574 139.256L183.092 140.505L166.203 133.818ZM179.682 126.729C179.321 127.655 178.88 128.461 178.399 129.065C177.917 129.709 177.396 130.153 176.834 130.475C176.272 130.797 175.671 130.958 175.029 130.958C174.387 130.958 173.705 130.837 173.023 130.555C172.301 130.273 171.659 129.871 171.178 129.387C170.696 128.904 170.335 128.34 170.094 127.695C169.854 127.051 169.773 126.326 169.854 125.56C169.894 124.755 170.094 123.909 170.455 123.023L172.501 117.826L189.39 124.513L188.909 125.762L181.287 122.741L179.682 126.729ZM171.418 123.425C170.817 124.916 170.736 126.165 171.097 127.131C171.458 128.138 172.221 128.864 173.384 129.307C174.587 129.79 175.59 129.75 176.513 129.266C177.396 128.783 178.118 127.776 178.719 126.285L180.284 122.298L172.983 119.397L171.418 123.425Z" fill="white"/>
+                      <path d="M170.374 159.639L155.691 148.884L156.454 147.796L163.474 152.952L170.173 143.727L163.153 138.612L163.915 137.524L178.598 148.279L177.836 149.367L170.976 144.372L164.276 153.597L171.136 158.592L170.374 159.639Z" fill="white"/>
+                      <path d="M142.533 161.009L143.376 160.243C143.496 160.123 143.616 160.082 143.777 160.042C143.897 160.042 144.098 160.042 144.298 160.082L153.645 161.653C153.846 161.694 154.006 161.694 154.167 161.734C154.327 161.734 154.488 161.734 154.648 161.694C154.809 161.653 154.969 161.573 155.13 161.492C155.29 161.412 155.451 161.291 155.651 161.13L157.416 159.559L151.6 152.993L152.602 152.106L164.637 165.762L163.634 166.648L158.058 160.324L156.494 161.734C156.333 161.895 156.213 162.016 156.093 162.137C155.972 162.258 155.892 162.419 155.812 162.58C155.732 162.741 155.691 162.902 155.651 163.104C155.611 163.305 155.611 163.506 155.611 163.748L156.012 172.852C156.012 173.013 156.012 173.134 155.972 173.295C155.932 173.416 155.852 173.537 155.732 173.658L154.929 174.383L154.448 164.473C154.408 164.111 154.448 163.788 154.528 163.466C154.608 163.184 154.729 162.862 154.889 162.58C154.528 162.781 154.207 162.862 153.886 162.902C153.565 162.942 153.164 162.902 152.763 162.781L142.533 161.009Z" fill="white"/>
+                      <path d="M128.693 169.106L129.576 168.582C129.696 168.542 129.777 168.501 129.897 168.501C129.977 168.501 130.097 168.542 130.178 168.622L134.671 172.127L142.373 167.655L141.571 162.016C141.571 161.935 141.571 161.814 141.611 161.694C141.651 161.573 141.731 161.492 141.811 161.452L142.694 160.928L145.342 180.465L144.218 181.11L128.693 169.106ZM135.473 172.812L143.256 178.934C143.536 179.136 143.817 179.378 144.098 179.7C144.058 179.498 143.978 179.297 143.938 179.096C143.897 178.894 143.857 178.733 143.857 178.572L142.453 168.743L135.473 172.812Z" fill="white"/>
+                      <path d="M119.626 190.979C118.623 191.221 117.741 191.341 116.939 191.301C116.136 191.301 115.454 191.14 114.893 190.858C114.331 190.576 113.85 190.213 113.489 189.69C113.128 189.206 112.847 188.562 112.686 187.877C112.566 187.394 112.526 186.951 112.606 186.467C112.646 185.984 112.807 185.541 113.007 185.098C113.208 184.655 113.529 184.252 113.89 183.849C114.251 183.446 114.732 183.124 115.254 182.842C113.81 182.963 112.646 182.761 111.723 182.238C110.801 181.714 110.199 180.828 109.918 179.66C109.718 178.894 109.718 178.209 109.838 177.525C109.958 176.84 110.239 176.236 110.64 175.712C111.041 175.188 111.603 174.705 112.285 174.302C112.967 173.899 113.769 173.577 114.732 173.335L120.469 171.925L124.761 189.65L119.626 190.979ZM114.973 174.463C113.408 174.826 112.325 175.47 111.723 176.316C111.082 177.202 110.921 178.209 111.202 179.458C111.322 180.022 111.563 180.505 111.884 180.908C112.205 181.311 112.606 181.593 113.087 181.835C113.569 182.036 114.13 182.157 114.732 182.197C115.334 182.238 116.056 182.157 116.778 181.956L121.231 180.868L119.426 173.416L114.973 174.463ZM123.197 189.045L121.432 181.754L117.621 182.681C116.818 182.882 116.136 183.164 115.615 183.486C115.093 183.849 114.692 184.211 114.411 184.655C114.13 185.098 113.93 185.541 113.89 186.024C113.81 186.508 113.85 186.951 113.97 187.434C114.251 188.642 114.853 189.448 115.775 189.851C116.658 190.294 117.901 190.294 119.466 189.932L123.197 189.045Z" fill="white"/>
+                      <path d="M83.8027 193.194L84.8859 174.987L86.2097 175.067L85.6882 183.809L97.0411 184.493L97.5627 175.752L98.8865 175.833L97.8034 194.04L96.4795 193.96L97.001 185.46L85.6481 184.775L85.1266 193.275L83.8027 193.194Z" fill="white"/>
+                      <path d="M67.2344 170.273L68.1972 170.555C68.3175 170.596 68.3978 170.636 68.4379 170.717C68.478 170.797 68.5181 170.878 68.5582 170.999L69.16 176.678L77.7449 179.136L81.235 174.624C81.2751 174.543 81.3553 174.463 81.4757 174.423C81.596 174.382 81.6763 174.382 81.7966 174.423L82.7594 174.705L70.6042 190.173L69.3605 189.81L67.2344 170.273ZM69.2803 177.766L70.3233 187.635C70.3635 187.957 70.4036 188.36 70.4036 188.763C70.5239 188.562 70.6042 188.401 70.7245 188.239C70.8448 188.078 70.9251 187.917 71.0454 187.796L77.103 179.981L69.2803 177.766Z" fill="white"/>
+                      <path d="M37.0684 173.939L46.5358 158.35L65.3103 169.831L55.8428 185.42L54.7196 184.735L63.6254 170.072L55.9632 165.4L47.0573 180.062L45.9341 179.378L54.8399 164.715L47.0975 159.961L38.1916 174.624L37.0684 173.939Z" fill="white"/>
+                      <path d="M35.2628 147.917L36.0652 147.192L43.6472 155.047L30.6093 167.736L23.0273 159.881L23.8297 159.115L30.4489 166.004L35.7442 160.888L30.2082 155.128L30.9704 154.402L36.5065 160.163L41.9623 154.886L35.2628 147.917Z" fill="white"/>
+                      <path d="M9.1875 138.853L24.7928 129.508L25.3945 130.475L12.116 138.451C11.9154 138.571 11.7148 138.692 11.4741 138.773L26.0364 138.41C26.2771 138.41 26.4777 138.491 26.598 138.692L26.7184 138.853C26.8387 139.055 26.8387 139.256 26.6782 139.458L19.5375 152.348C19.7381 152.187 19.9387 152.066 20.1393 151.945L33.4178 143.969L34.0196 144.976L18.3742 154.322L17.8928 153.556C17.8125 153.436 17.8125 153.355 17.7724 153.274C17.7724 153.194 17.7724 153.113 17.8526 152.992L24.9532 140.183C25.0736 139.941 25.2742 139.74 25.4346 139.498C25.2742 139.538 25.1538 139.538 24.9934 139.578C24.8329 139.578 24.7125 139.619 24.5521 139.619L10.0701 139.981C9.94971 139.981 9.82936 139.941 9.78925 139.901C9.74913 139.86 9.6689 139.78 9.58866 139.659L9.1875 138.853Z" fill="white"/>
+                      <path d="M2.04591 111.179L3.44999 117.423L20.0983 113.677L20.3791 114.966L3.7308 118.712L5.13487 124.996L4.05173 125.238L0.962769 111.421L2.04591 111.179Z" fill="white"/>
+                      <path d="M17.0495 94.2207H18.1326L18.5739 105.137L0.44128 105.903L0 94.9458L1.08314 94.9055L1.48431 104.493L8.82561 104.17L8.50468 96.1945L9.58782 96.1543L9.90875 104.13L17.4907 103.808L17.0495 94.2207Z" fill="white"/>
+                      <path d="M20.2592 78.4299L20.0586 79.7592L3.1696 77.1006L2.04634 84.3514C4.41321 84.8348 6.45915 85.3182 8.18415 85.7613C9.90916 86.2044 11.3935 86.6878 12.6371 87.1309C13.8406 87.574 14.8435 88.0574 15.6057 88.5005C16.3679 88.9436 16.9696 89.427 17.3708 89.8701C17.772 90.3535 18.0528 90.8369 18.133 91.3202C18.2534 91.8036 18.2534 92.287 18.1731 92.8107C18.133 93.0927 18.0528 93.3344 17.9726 93.4955C17.8923 93.6969 17.8121 93.7775 17.6917 93.7775L16.8894 93.6566L17.0098 92.8913C17.09 92.4884 17.0499 92.1259 16.9295 91.7231C16.8092 91.3202 16.5685 90.9174 16.1272 90.5549C15.726 90.152 15.1243 89.7492 14.3621 89.3464C13.5999 88.9436 12.597 88.5408 11.3935 88.0977C10.19 87.6545 8.70566 87.2517 6.94054 86.8086C5.17542 86.3655 3.1696 85.8418 0.802734 85.3584L2.32716 75.5698L20.2592 78.4299Z" fill="white"/>
+                      <path d="M24.3507 63.4044L25.3536 63.8072L21.5426 74.039L4.5332 67.7146L8.34426 57.4829L9.34717 57.8454L6.01751 66.8284L12.9175 69.4065L15.6856 61.914L16.6885 62.2765L13.9204 69.769L21.021 72.4277L24.3507 63.4044Z" fill="white"/>
+                      <path d="M17.5308 43.062L12.8372 51.1185L27.6 59.8195L26.9181 60.9474L11.2325 51.7227L16.6081 42.498L17.5308 43.062Z" fill="white"/>
+                      <path d="M22.9473 34.5221C24.3112 32.8705 25.7153 31.944 27.1194 31.7426C28.5235 31.5009 29.8874 31.9843 31.2113 33.072C31.813 33.5956 32.2944 34.1596 32.6153 34.8444C32.9363 35.4889 33.0967 36.214 33.0967 36.9391C33.0967 37.6641 32.9764 38.4295 32.6555 39.2352C32.3345 40.0005 31.8531 40.8062 31.2113 41.5715L29.045 44.1496L34.6212 48.9029L33.7787 49.91L19.8984 38.1073L22.9473 34.5221ZM30.4089 40.8867C30.9304 40.2825 31.2915 39.638 31.5322 39.0338C31.7729 38.3892 31.8932 37.785 31.8531 37.1808C31.8531 36.5765 31.6927 36.0126 31.452 35.4889C31.2113 34.9652 30.8101 34.4818 30.3287 34.079C29.2456 33.1928 28.1624 32.79 27.0392 32.9914C25.9159 33.1928 24.7926 33.8776 23.7095 35.2069L21.5432 37.785L28.2427 43.4648L30.4089 40.8867Z" fill="white"/>
+                      <path d="M52.8333 31.3397L52.0711 31.9842C51.9909 32.0647 51.8705 32.105 51.7903 32.105C51.6699 32.105 51.5897 32.0647 51.5095 32.0245L46.4949 29.3255L39.5949 35.0456L41.3199 40.4838C41.36 40.5643 41.36 40.6852 41.3199 40.806C41.2798 40.9269 41.2397 41.0074 41.1594 41.088L40.3972 41.7325L34.5001 22.9206L35.503 22.0747L52.8333 31.3397ZM45.5321 28.8421L36.8269 24.1291C36.5461 23.968 36.2251 23.7666 35.8641 23.5249C35.9443 23.7263 36.0245 23.8874 36.1048 24.0888C36.185 24.2902 36.2251 24.4514 36.2652 24.6125L39.274 34.0789L45.5321 28.8421Z" fill="white"/>
+                      <path d="M62.7019 5.88135L70.6049 22.3166L69.5618 22.8L62.8223 8.82196C62.7421 8.62055 62.6217 8.41914 62.5415 8.17744L61.6188 22.8C61.6188 23.0416 61.4985 23.2431 61.2979 23.3236L61.0973 23.4042C60.8967 23.4848 60.6961 23.4848 60.4955 23.3236L48.3403 15.0255C48.4606 15.2269 48.581 15.4686 48.7013 15.67L55.4409 29.648L54.3979 30.1716L46.535 13.7364L47.3374 13.3336C47.4577 13.2933 47.5379 13.253 47.6182 13.253C47.6984 13.253 47.7786 13.2933 47.899 13.3336L60.0141 21.5512C60.2147 21.7123 60.4554 21.9137 60.656 22.1152C60.656 21.954 60.6159 21.8332 60.6159 21.672C60.6159 21.5109 60.6159 21.3901 60.6159 21.2289L61.5386 6.687C61.5386 6.56615 61.5787 6.4453 61.6589 6.40502C61.699 6.36474 61.7793 6.28417 61.8996 6.24389L62.7019 5.88135Z" fill="white"/>
+                      <rect x="57" y="57" width="80" height="80" rx="40" fill="white"/>
+                      <path d="M92.8514 101.798L92.8525 101.796L107.928 88.0343C108.59 87.44 107.784 87.1506 106.905 87.6895L88.2983 99.5648L80.2611 97.0269C78.5257 96.4894 78.5129 95.2828 80.6507 94.4153L111.97 82.1985C113.401 81.5414 114.781 82.5463 114.235 84.761L108.901 110.187C108.529 111.994 107.45 112.426 105.955 111.591L97.8295 105.519L93.9249 109.36C93.9125 109.372 93.9001 109.384 93.8878 109.396C93.451 109.826 93.0898 110.182 92.2992 110.182L92.8514 101.798Z" fill="#1E1F45"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_1127_8041">
+                      <rect width="193" height="194" fill="white"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+                </a>
+            </li>
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР ИНВЕСТИЦИННОГО РЫНКА I<br> КВАРТАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Инвестиции</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/1.png" alt="">
+                </picture>
+            </li>
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР РЫНКА ОФИСНОЙ<br> НЕДВИЖИМОСТИ II КВАТРАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Офисы</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/2.png" alt="">
+                </picture>
+            </li>
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР ИНВЕСТИЦИННОГО РЫНКА I<br> КВАРТАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Инвестиции</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/3.png" alt="">
+                </picture>
+            </li>
+            <li class="analitics-articles__item news-card">
+                <time datetime="" class="news-card__time" datetime="2024-10-12">12 октября</time>
+                <h3 class="news-card__title">
+                    ОБЗОР РЫНКА ОФИСНОЙ<br> НЕДВИЖИМОСТИ II КВАТРАЛ 2024 Г.
+                </h3>
+                <div class="news-card__category">
+                    <p class="news-card__category-item"># Офисы</p>
+                    <p class="news-card__category-item"># Периодический отчет</p>
+                </div>
+                <picture class="news-card__img">
+                    <img src="local/templates/main/assets/images/delete/news/4.png" alt="">
+                </picture>
+            </li>
+        </ul>
+        <button class="analitics-articles__more-load" type="button">
+            Загрузить ещё
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1712_141)">
+                <path d="M11.6211 6.46067V5.55295L16.6817 5.58321L16.409 0.560514L17.3181 0.5L17.6514 6.49092L11.6211 6.46067Z" fill="#1E1F45"/>
+                <path d="M2.92423 9.87975C3.16665 7.94329 4.13635 6.21863 5.6515 4.97809C7.22726 3.67703 9.19696 3.07188 11.2273 3.28368C13.2576 3.49548 15.0757 4.46371 16.3788 6.03709L17.0757 5.4622C15.6212 3.70728 13.5909 2.61803 11.3182 2.37597C9.04544 2.16417 6.83332 2.82983 5.07574 4.28217C3.34847 5.674 2.25756 7.67098 2.01514 9.87975H2.92423Z" fill="#1E1F45"/>
+                <path d="M9.25735 14.5394L9.22705 15.4471L4.19675 15.4168L4.46948 20.4395L3.56038 20.5L3.22705 14.5091L9.25735 14.5394Z" fill="#1E1F45"/>
+                <path d="M17.9245 11.1202C17.682 13.0567 16.7123 14.7814 15.1972 16.0219C13.6214 17.323 11.6517 17.9281 9.62143 17.7163C7.59113 17.5045 5.77295 16.5363 4.46992 14.9629L3.77295 15.5378C5.22749 17.2927 7.2578 18.382 9.53053 18.624C11.8033 18.8358 14.0154 18.1702 15.773 16.7178C17.5002 15.2957 18.5911 13.329 18.8336 11.1202H17.9245Z" fill="#1E1F45"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1712_141">
+                <rect width="20" height="20" fill="white" transform="translate(0.5 0.5)"/>
+                </clipPath>
+                </defs>
+            </svg>
+        </button>
+    </div>
+    <div class="analitics-mailing container">
+        <div class="analitics-mailing__left">
+            <h2 class="analitics-mailing__title title_page color_accent">
+                БУДЬТЕ В ЦЕНТРЕ<br> СОБЫТИЙ
+            </h2>
+        </div>
+        <div class="analitics-mailing__right">
+            <p class="analitics-mailing__text text_min color_accent">
+                Подпишитесь на нашу рассылку и узнавайте первым о новостях и аналитических обзорах
+            </p>
+            <form action="#!" class="analitics-mailing__form">
+                <fieldset class="modal-fieldset modal__elems-form">
+                    <label class="modal-label">
+                        <input class="modal-input" type="email" placeholder="E-mail*" required>
+                    </label>
+                </fieldset>
+
+                <fieldset class="modal-fieldset modal-fieldset_row">
+                    <legend>Блока с кнопкой и информацие по отправке формы</legend>
+                    <p class="modal-description">
+                        Нажимая кнопку “Отправить” вы даете<br> согласие на <a href="#!">обработку персональных данных</a>
+                    </p>
+                    <button class="modal-btn" type="submit">
+                        Отправить
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1608_1938)">
+                            <path d="M15.9987 0L15.5501 14.9533L14.4286 14.9159L14.8398 1.15888L1.12019 1.53271L1.08281 0.411215L15.9987 0Z" fill="#1E1F45"/>
+                            <path d="M15.0439 0.196562L0.00312805 15.2373L0.796137 16.0303L15.8369 0.989572L15.0439 0.196562Z" fill="#1E1F45"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1608_1938">
+                            <rect width="16" height="16" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <section class="experience experience_mb-100">
+        <div class="experience__inner container">
+          <div class="experience__top">
+            <h2 class="experience__title title_page color_white">
+              ОПЫТ, КОТОРЫМ ГОРДИМСЯ
+            </h2>
+            <p class="experience__top-text text_min color_white">
+              Наша цель: добиваться значительных улучшений<br> для наших клиентов
+            </p>
+          </div>
+          <div class="experience__accordion">
+            <div class="experience__accordion-top">
+              <button class="experience__accordion-btn m-f-btn is-active" data-id="ex-1" aria-label="офис">
+                офисы
+              </button>
+              <button class="experience__accordion-btn m-f-btn" data-id="ex-2" aria-label="склады">
+                склады
+              </button>
+              <button class="experience__accordion-btn experience__accordion-btn_min m-f-btn" data-id="ex-3" aria-label="аналитический центр">
+                аналитический<br> центр
+              </button>
+              <button class="experience__accordion-btn m-f-btn" data-id="ex-4" aria-label="M&A">
+                M&A
+              </button>
+              <button class="experience__accordion-btn experience__accordion-btn_min m-f-btn" data-id="ex-5" aria-label="жилая недвижимость">
+                жилая<br> недвижимость
+              </button>
+              <button class="experience__accordion-btn m-f-btn" data-id="ex-6" aria-label="capital">
+                capital
+              </button>
+              <button class="experience__accordion-btn experience__accordion-btn_min m-f-btn" data-id="ex-7" aria-label="зарубежная недвижемость">
+                зарубежная<br> недвижемость
+              </button>
+              <button class="experience__accordion-btn experience__accordion-btn_min m-f-btn" data-id="ex-8" aria-label="загородная недвижемость">
+                загородная<br> недвижемость
+              </button>
+              <button class="experience__accordion-btn m-f-btn" data-id="ex-9" aria-label="дизайн">
+                дизайн
+              </button>
+            </div>
+            <div class="experience__accordion-bodys">
+              <ul class="experience__accordion-list is-active" data-body-id="ex-1">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-2">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-3">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-4">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-5">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-6">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-7">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-8">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-9">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-10">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-11">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+              <ul class="experience__accordion-list" data-body-id="ex-12">
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>Т-БАНК</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/1.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Бережковская наб., 16А, стр. 5</li>
+                        <li>Площадь: 24 598 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo1.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Структурировали крупнейшую сделку<br> по аренде офиса на московском<br> рынке офисной недвижимости за всю<br> историю. Выступили консультантом<br> крупнейшей сделки в сервисных<br> офисах
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ДУКАТ<br> ПЛЕЙС II</h3>
+                    <img src="local/templates/main/assets/images/delete/experience/icon.svg" alt="">
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/2.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Гашека ул., 7с1.</li>
+                        <li>Площадь: 14 249 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo2.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text text_middle color_white">
+                    Мы привнесли добавленную<br>
+                    стоимость объекту, найдя крупного<br> 
+                    арендатора, инвестировавшего<br>
+                    в модернизацию здания. Собственник<br>
+                    получил нового арендатора на весь<br>
+                    объем площадей и избежал простоя <br>
+                    помещений.
+                  </p>
+                </li>
+                <li class="experience__accordion-item">
+                  <div class="experience__accordion-item-title">
+                    <h3>ЭРМИТАЖ<br> ПЛАЗА</h3>
+                  </div>
+                  <div class="experience__accordion-item-info">
+                    <img src="local/templates/main/assets/images/delete/experience/3.png" alt="" class="experience__accordion-item-img">
+                    <div class="experience__accordion-item-box">
+                      <ul>
+                        <li>Краснопролетарская ул., 2/4.</li>
+                        <li>Площадь: 10 325 м2</li>
+                      </ul>
+                      <img src="local/templates/main/assets/images/delete/experience/logo3.svg" alt="" class="experience__accordion-item-logo">
+                    </div>
+                  </div>
+                  <p class="experience__accordion-item-text experience__accordion-item-text_mr text_middle color_white">
+                    Мы взяли на себя весь процесс<br>
+                    переговоров по продлению <br>
+                    и пересогласованию условий<br>
+                    договора аренды. Сделка была<br>
+                    успешно закрыта без участия<br>
+                    представителей клиента, что<br>
+                    позволило ему сосредоточиться<br>
+                    на основном бизнесе
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </section>
+    <div class="analitics-blog">
+        <h3 class="analitics-blog__title title_page color_accent">
+            ЗАГОЛОВОК БЛОКА ДЛЯ SEO ТЕКСТА
+        </h3>
+        <p class="analitics-blog__info color_accent">
+            В 2024 г. объем новых проектов рынка <br>
+            сервисных офисов Москвы вырос почти <br>
+            в 2 раза по сравнению с аналогичным <br>
+            периодом 2023 г.
+        </p>
+        <img src="local/templates/main/assets/images/delete/analitics-blog.png" alt="" class="analitics-blog__img">
+        <div class="analitics-blog__texts color_accent">
+            <p class="text_min ">
+                Москва, 17 сентября. В текущих условиях нехватки качественного офисного предложения из-за ограниченного выбора объектов найти подходящий офис становится непростой задачей для бизнеса. На данный момент вакансия в столичных бизнес-центрах находится на историческом минимуме, а в объектах нового строительства, чей выход в эксплуатацию запланирован на<br> 2024-2026 гг., BTS-строительство и доля предварительной покупки и аренды площадей составляет более 70% объема. В такой ситуации гибкие офисные пространства выступают реальным решением для арендаторов, которым необходимо найти новый офис в короткие сроки.
+            </p>
+            <p class="text_min ">
+                По итогам I полугодия 2024 года объем рынка сервисных офисов составляет 406 тыс. кв. м. В течение восьми месяцев 2024 года объем рынка гибких рабочих пространств Москвы увеличился на 21 тыс. кв. м площадей. Это почти вдвое больше, чем было открыто за аналогичный период 2023 г. По прогнозу Nikoliers до конца 2024 г. рынок пополнится еще четырьмя новыми площадками, общей площадью 14 тыс. кв. м.
+            </p>
+        </div>
+    </div>
+    <div class="analitics-sections container">
+        <div class="analitics-sections__inner">
+            <div class="analitics-sections__left">
+                <h2 class="analitics-sections__title title_page">
+                    ДРУГИЕ<br> РАЗДЕЛЫ:
+                </h2>
+            </div>
+            <div class="analitics-sections__right">
+                <ul class="analitics-sections__list">
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            Инвестиции
+                        </a>
+                    </li>
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            M&A
+                        </a>
+                    </li>
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            Управление проектами
+                        </a>
+                    </li>
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            Слияния поглащения
+                        </a>
+                    </li>
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            Управление проектами
+                        </a>
+                    </li>
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            Оформление ВНЖ и ПМЖ
+                        </a>
+                    </li>
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            Сплит-решения
+                        </a>
+                    </li>
+                    <li class="analitics-sections__item text_middle color_accent">
+                        <a href="#!" class="analitics-sections__item-link">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.9984 0L19.4376 18.6916L18.0358 18.6449L18.5498 1.4486L1.40024 1.91589L1.35352 0.514019L19.9984 0Z" fill="#1E1F45"/>
+                                <path d="M18.8048 0.246191L0.00390625 19.0471L0.995168 20.0384L19.7961 1.23745L18.8048 0.246191Z" fill="#1E1F45"/>
+                            </svg>
+                            Карибская программа
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer__inner container">
+        <div class="footer__left">
+            <a href="#!" class="footer__logo" aria-label="logo">
+                <img src="local/templates/main/assets/images/no-delete/logo-footer.svg" alt="">
+            </a>
+            <a href="#!" class="footer__telegram-link">
+                <svg width="120" height="121" viewBox="0 0 120 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="0.251953" width="120" height="120" rx="60" fill="#1E1F45"/>
+                    <path d="M55.8514 65.0501L55.8525 65.0483L70.9285 51.2862C71.5901 50.692 70.7838 50.4025 69.9053 50.9414L51.2983 62.8167L43.2611 60.2788C41.5257 59.7413 41.5129 58.5348 43.6507 57.6672L74.97 45.4504C76.4006 44.7934 77.7811 45.7982 77.2351 48.0129L71.9014 73.4391C71.5289 75.2457 70.45 75.6779 68.9546 74.8433L60.8295 68.7707L56.9249 72.6115C56.9125 72.6237 56.9001 72.6359 56.8878 72.648C56.451 73.078 56.0898 73.4338 55.2992 73.4338L55.8514 65.0501Z" fill="white"/>
+                </svg>
+                Подпишитесь на наш<br> авторский канал
+            </a>
+        </div>
+        <div class="footer__right">
+            <div class="footer__links">
+                <ul class="footer__links-list">
+                    <li class="footer__links-item color_accent">
+                        <strong class="footer__links-item-title">НЕДВИЖИМОСТЬ</strong>
+                    </li>
+                    <li class="footer__links-item color_accent">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5567 3C5.69893 3 5.84115 3.05444 5.94949 3.16277L10.3941 7.60716C10.6114 7.82438 10.6114 8.17548 10.3941 8.3927L5.94949 12.8371C5.73226 13.0543 5.38113 13.0543 5.1639 12.8371C4.94667 12.6199 4.94667 12.2688 5.1639 12.0515L9.21576 7.99993L5.1639 3.94832C4.94667 3.7311 4.94667 3.37999 5.1639 3.16278C5.27224 3.05444 5.41447 3 5.5567 3Z" fill="#1E1F45"/>
+                                <path d="M10.001 8.5C10.2771 8.5 10.501 8.27614 10.501 8C10.501 7.72386 10.2771 7.5 10.001 7.5V8.5ZM10.0009 8.5H10.001V7.5H10.0009V8.5Z" fill="#2B47EF"/>
+                            </svg>
+                            Офисная недвижимость
+                        </a>
+                    </li>
+                    <li class="footer__links-item color_accent">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Складская недвижимость
+                        </a>
+                    </li>
+                    <li class="footer__links-item color_accent">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Площадки под девелопмент
+                        </a>
+                    </li>
+                    <li class="footer__links-item color_accent">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Жилая недвижимость 
+                        </a>
+                    </li>
+                    <li class="footer__links-item color_accent">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Загородная недвижимость
+                        </a>
+                    </li>
+                    <li class="footer__links-item color_accent">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Курортная недвижимость
+                        </a>
+                    </li>
+                    <li class="footer__links-item color_accent">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Зарубежная недвижимость
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__links-list">
+                    <li class="footer__links-item">
+                        <strong class="footer__links-item-title">УСЛУГИ</strong>
+                    </li>
+                    <li class="footer__links-item">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5567 3C5.69893 3 5.84115 3.05444 5.94949 3.16277L10.3941 7.60716C10.6114 7.82438 10.6114 8.17548 10.3941 8.3927L5.94949 12.8371C5.73226 13.0543 5.38113 13.0543 5.1639 12.8371C4.94667 12.6199 4.94667 12.2688 5.1639 12.0515L9.21576 7.99993L5.1639 3.94832C4.94667 3.7311 4.94667 3.37999 5.1639 3.16278C5.27224 3.05444 5.41447 3 5.5567 3Z" fill="#1E1F45"/>
+                                <path d="M10.001 8.5C10.2771 8.5 10.501 8.27614 10.501 8C10.501 7.72386 10.2771 7.5 10.001 7.5V8.5ZM10.0009 8.5H10.001V7.5H10.0009V8.5Z" fill="#2B47EF"/>
+                            </svg>
+                            Консалтинг
+                        </a>
+                    </li>
+                    <li class="footer__links-item">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Оценка
+                        </a>
+                    </li>
+                    <li class="footer__links-item">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Инвестиционный фонд
+                        </a>
+                    </li>
+                    <li class="footer__links-item">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Asset Management
+                        </a>
+                    </li>
+                    <li class="footer__links-item">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Маркетинг
+                        </a>
+                    </li>
+                    <li class="footer__links-item">
+                        <a class="footer__links-item-link" href="#!">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.60207 3.20104C5.75567 3.20104 5.90926 3.25983 6.02625 3.37682L10.826 8.17629C11.0606 8.41087 11.0606 8.79002 10.826 9.0246L6.02625 13.8241C5.79166 14.0586 5.41248 14.0586 5.17789 13.8241C4.94331 13.5895 4.94331 13.2103 5.17789 12.9758L9.55348 8.60045L5.17789 4.22513C4.94331 3.99055 4.94331 3.6114 5.17789 3.37682C5.29489 3.25983 5.44848 3.20104 5.60207 3.20104" fill="#1E1F45"/>
+                            </svg>
+                            Архитектура и дизайн
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__media">
+                <ul class="footer__media-list">
+                    <li class="footer__media-item"><a href="#!">АНАЛИТИКА</a></li>
+                    <li class="footer__media-item"><a href="#!">О КОМПАНИИ</a></li>
+                    <li class="footer__media-item"><a href="#!">КАРЬЕРА</a></li>
+                    <li class="footer__media-item"><a href="#!">КОНТАКТЫ</a></li>
+                </ul>
+                <div class="footer__media-address">
+                    <strong class="footer__media-address-title">
+                        ЦЕНТРАЛЬНЫЙ ОФИС
+                    </strong>
+                    <p class="footer__media-address-text">
+                        БЦ Savinski, Большой<br> Саввинский переулок,<br> д. 11, г. Москва, 119435
+                    </p>
+                </div>
+                <ul class="footer__media-social-list">
+                    <li class="footer__media-social-item"><a href="tel:+74957907171">+7 495 790-71-71</a></li>
+                    <li class="footer__media-social-item"><a href="mailto:inbox@ricci-estate.ru">inbox@ricci-estate.ru</a></li>
+                    <li class="footer__media-social-item">
+                        <a href="local/templates/main/assets/pdf.pdf" download="presentation">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6676 12.3335C13.0358 12.3335 13.3343 12.632 13.3343 13.0002C13.3343 13.3684 13.0358 13.6668 12.6676 13.6668H0.667643C0.299453 13.6668 0.000976562 13.3684 0.000976562 13.0002C0.000976562 12.632 0.299453 12.3335 0.667643 12.3335H12.6676ZM6.66764 11.0002L6.61298 10.9975L6.53383 10.9867L6.45955 10.967L6.3855 10.9377L6.3205 10.9028L6.27087 10.8693L6.19624 10.8049L3.52957 8.13823C3.26922 7.87788 3.26922 7.45577 3.52957 7.19543C3.76989 6.9551 4.14805 6.93662 4.40958 7.13997L4.47238 7.19543L6.00098 8.7235V1.00016C6.00098 0.631973 6.29945 0.333496 6.66764 0.333496C7.03583 0.333496 7.33431 0.631973 7.33431 1.00016V8.7235L8.8629 7.19543C9.10323 6.9551 9.48138 6.93662 9.74291 7.13997L9.80571 7.19543C10.046 7.43575 10.0645 7.8139 9.86117 8.07543L9.80571 8.13823L7.13905 10.8049L7.10974 10.8325L7.06451 10.8693L6.99035 10.917L6.94971 10.9377L6.89541 10.9602L6.84497 10.9763L6.74596 10.9956L6.66764 11.0002Z" fill="black"/>
+                            </svg>
+                            Скачать презентацию
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__community-links">
+                    <li class="footer__community-item">
+                        <a href="#!">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.000976562 20C0.542683 18.2468 1.17055 16.5799 1.74457 14.8592C-2.06051 8.18779 2.64848 0.677451 9.02659 0.0535858C15.0485 -0.535523 19.986 3.80058 20.0009 9.7183C20.0166 15.9624 13.9756 21.2057 7.18041 19.0745C6.66784 18.9138 6.03361 18.39 5.43682 18.3548C4.60277 18.3056 3.50971 18.9059 2.66756 19.1774C1.74447 19.4751 0.941809 19.7734 0.000976562 20ZM5.64197 16.5042C11.1293 19.8427 17.6999 16.0981 18.2573 10.6437C18.7618 5.70591 14.8288 1.31242 9.53937 1.69865C3.50068 2.13948 -0.126628 9.3655 3.59064 14.6535C3.26158 15.5575 2.95364 16.4826 2.66756 17.4296C3.67506 17.1371 4.60379 16.7658 5.64197 16.5042Z" fill="#1E1F45"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.79584 5.09157C8.37304 6.30187 9.26587 8.09202 7.79584 8.89584C8.5424 10.478 9.7767 11.5711 11.3855 12.2888C11.9205 11.934 12.2719 11.3951 12.7189 10.9522C13.6528 11.3184 14.5257 11.7455 15.2829 12.2888C15.3608 14.0576 13.8739 14.7117 12.6163 14.6536C9.96318 14.5312 6.31669 11.171 5.43689 8.69018C4.91477 7.21818 5.51526 4.40272 7.79584 5.09157Z" fill="#1E1F45"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__community-item">
+                        <a href="#!">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.18515 2.54648C0.638672 4.09295 0.638672 6.58197 0.638672 11.56V12.44C0.638672 17.418 0.638672 19.907 2.18515 21.4535C3.73162 23 6.22064 23 11.1987 23H12.0787C17.0567 23 19.5457 23 21.0922 21.4535C22.6387 19.907 22.6387 17.418 22.6387 12.44V11.56C22.6387 6.58197 22.6387 4.09295 21.0922 2.54648C19.5457 1 17.0567 1 12.0787 1H11.1987C6.22064 1 3.73162 1 2.18515 2.54648ZM4.35156 7.69141C4.47073 13.4114 7.3307 16.8489 12.3449 16.8489H12.6291V13.5764C14.4716 13.7597 15.8648 15.1072 16.424 16.8489H19.0274C18.3124 14.2456 16.4331 12.8064 15.2598 12.2564C16.4331 11.5781 18.0831 9.92807 18.4773 7.69141H16.1122C15.5989 9.50641 14.0774 11.1564 12.6291 11.3122V7.69141H10.264V14.0347C8.79735 13.6681 6.94572 11.8897 6.86322 7.69141H4.35156Z" fill="#1E1F45"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer__community-item">
+                        <a href="#!">
+                            <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.3034 4.55527C23.5193 4.55527 24.505 3.54494 24.505 2.29863C24.505 1.05232 23.5193 0.0419922 22.3034 0.0419922C21.0875 0.0419922 20.1018 1.05232 20.1018 2.29863C20.1018 3.54494 21.0875 4.55527 22.3034 4.55527Z" fill="#1E1F45"/>
+                                <path d="M15.8818 4.3457H0.408447V21.977H4.7152V16.2409H12.9677L16.7328 21.977H21.5554L17.4034 16.2144C18.6928 16.003 19.6212 15.5007 20.1886 14.7077C20.7559 13.9147 21.0396 12.6459 21.0396 10.9541V9.63244C21.0396 8.62796 20.9364 7.83496 20.7559 7.22696C20.5754 6.619 20.266 6.09034 19.8275 5.61453C19.3633 5.16516 18.8476 4.84793 18.2286 4.63647C17.6097 4.45144 16.836 4.3457 15.8818 4.3457ZM15.1855 12.3551H4.7152V8.23144H15.1855C15.7787 8.23144 16.1913 8.33718 16.3976 8.52222C16.6039 8.70725 16.7328 9.05088 16.7328 9.55314V11.0334C16.7328 11.5621 16.6039 11.9057 16.3976 12.0908C16.1913 12.2758 15.7787 12.3551 15.1855 12.3551Z" fill="#1E1F45"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom container">
+        <ul class="footer__bottom-list">
+            <li class="footer__bottom-item">
+                ©2024 Ricci
+            </li>
+            <li class="footer__bottom-item">
+                <a href="#!">Все права защищены</a>
+            </li>
+            <li class="footer__bottom-item">
+                <a href="#!">Политика конфиденциальности</a>
+            </li>
+            <li class="footer__bottom-item">
+                <div class="header__lang footer__lang">
+                    <button class="header__lang-btn is-active" type="button" aria-label="Кнопка смены языка Ru">RU</button>
+                    <button class="header__lang-btn" type="button" aria-label="Кнопка смены языка Eng">ENG</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</footer>
+<!-- 
+    большое меню
+-->
+<div class="big-menu">
+    <div class="big-menu__top container">
+        <button class="big-menu__btn-close" type="button" aria-label="Закрыть модальное окно">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0713 15.0713C15.4618 14.6807 15.4618 14.0476 15.0713 13.657L9.41443 8.00017L15.0713 2.34334C15.4618 1.95281 15.4618 1.31965 15.0713 0.929125C14.6807 0.538601 14.0476 0.538601 13.657 0.929125L8.00022 6.58596L2.34338 0.929124C1.95286 0.538599 1.31969 0.538599 0.92917 0.929124C0.538646 1.31965 0.538646 1.95281 0.92917 2.34334L6.586 8.00017L0.929124 13.657C0.538599 14.0476 0.538599 14.6807 0.929124 15.0713C1.31965 15.4618 1.95281 15.4618 2.34334 15.0713L8.00022 9.41438L13.6571 15.0713C14.0476 15.4618 14.6808 15.4618 15.0713 15.0713Z" fill="white"/>
+            </svg>
+        </button>
+    </div>
+    <div class="big-menu__inner container">
+        <div class="big-menu__left">
+            <a href="/" class="big-menu__logo" title="logo">
+                <img src="local/templates/main/assets/images/no-delete/logo-big-white.svg" alt="">
+            </a>
+            <button class="big-menu__btn btn btn_white btn-callback" type="button">
+                <div class="btn_icon">
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 20.5003L1.30841 19.9396L1.35514 18.5377L18.5514 19.0517L18.0841 1.9022L19.486 1.85547L20 20.5003Z" fill="#1E1F45"/>
+                        <path d="M19.7541 19.3063L0.953125 0.505371L-0.0381367 1.49663L18.7628 20.2976L19.7541 19.3063Z" fill="#1E1F45"/>
+                    </svg>
+                </div>
+                Обсудить задачу
+            </button>
+        </div>
+        <div class="big-menu__right">
+            <div class="big-menu__links">
+                <ul class="big-menu__links-list">
+                    <li class="big-menu__links-item">
+                        <strong class="big-menu__links-item-title">НЕДВИЖИМОСТЬ</strong>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Офисная недвижимость
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Складская недвижимость
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Площадки под девелопмент
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Жилая недвижимость
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Загородная недвижимость
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Курортная недвижимость
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Зарубежная недвижимость
+                        </a>
+                    </li>
+                </ul>
+                <ul class="big-menu__links-list">
+                    <li class="big-menu__links-item">
+                        <strong class="big-menu__links-item-title">УСЛУГИ</strong>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Консалтинг
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Оценка
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Инвестиционный фонд
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Asset Management
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Маркетинг
+                        </a>
+                    </li>
+                    <li class="big-menu__links-item">
+                        <a href="" class="big-menu__links-item-link">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.55572 3C5.69795 3 5.84018 3.05444 5.94852 3.16277L10.3932 7.60716C10.6104 7.82438 10.6104 8.17548 10.3932 8.3927L5.94852 12.8371C5.73128 13.0543 5.38016 13.0543 5.16292 12.8371C4.94569 12.6199 4.94569 12.2688 5.16292 12.0515L9.21478 7.99993L5.16292 3.94832C4.94569 3.7311 4.94569 3.37999 5.16292 3.16278C5.27126 3.05444 5.41349 3 5.55572 3Z" fill="white"/>
+                                <path d="M10 8.5C10.2761 8.5 10.5 8.27614 10.5 8C10.5 7.72386 10.2761 7.5 10 7.5V8.5ZM9.9999 8.5H10V7.5H9.9999V8.5Z" fill="#2B47EF"/>
+                            </svg>Архтектура и дизайн
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="big-menu__media">
+                <ul class="big-menu__media-list">
+                    <li class="big-menu__media-item">
+                        <a href="#!" class="big-menu__media-link">АНАЛИТИКА</a>
+                    </li>
+                    <li class="big-menu__media-item">
+                        <a href="#!" class="big-menu__media-link">О КОМПАНИИ</a>
+                    </li>
+                    <li class="big-menu__media-item">
+                        <a href="#!" class="big-menu__media-link">КАРЬЕРА</a>
+                    </li>
+                    <li class="big-menu__media-item">
+                        <a href="#!" class="big-menu__media-link">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+                <div class="big-menu__media-addres">
+                    <strong class="big-menu__media-addres-title">ЦЕНТРАЛЬНЫЙ ОФИС</strong>
+                    <p class="big-menu__media-addres-text">
+                        БЦ Savinski, Большой<br>
+                        Саввинский переулок,<br>
+                        д. 11, г. Москва,<br> 119435
+                    </p>
+                </div>
+                <ul class="big-menu__media-social-list">
+                    <li class="big-menu__media-social-item">
+                        <a href="tel:+74957907171" class="big-menu__media-social-item-link">+7 495 790-71-71</a>
+                    </li>
+                    <li class="big-menu__media-social-item">
+                        <a href="mailto:inbox@ricci-estate.ru" class="big-menu__media-social-item-link">inbox@ricci-estate.ru</a>
+                    </li>
+                    <li class="big-menu__media-social-item">
+                        <a href="local/templates/main/assets/pdf.pdf" class="big-menu__media-social-item-link" download="pdf">
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6667 12.3335C13.0349 12.3335 13.3333 12.632 13.3333 13.0002C13.3333 13.3684 13.0349 13.6668 12.6667 13.6668H0.666667C0.298477 13.6668 0 13.3684 0 13.0002C0 12.632 0.298477 12.3335 0.666667 12.3335H12.6667ZM6.66667 11.0002L6.612 10.9975L6.53285 10.9867L6.45857 10.967L6.38452 10.9377L6.31953 10.9028L6.26989 10.8693L6.19526 10.8049L3.5286 8.13823C3.26825 7.87788 3.26825 7.45577 3.5286 7.19543C3.76892 6.9551 4.14707 6.93662 4.4086 7.13997L4.4714 7.19543L6 8.7235V1.00016C6 0.631973 6.29848 0.333496 6.66667 0.333496C7.03486 0.333496 7.33333 0.631973 7.33333 1.00016V8.7235L8.86193 7.19543C9.10225 6.9551 9.4804 6.93662 9.74193 7.13997L9.80474 7.19543C10.0451 7.43575 10.0635 7.8139 9.8602 8.07543L9.80474 8.13823L7.13807 10.8049L7.10876 10.8325L7.06354 10.8693L6.98937 10.917L6.94873 10.9377L6.89443 10.9602L6.844 10.9763L6.74498 10.9956L6.66667 11.0002Z" fill="white"/>
+                            </svg>
+                            Скачать презентацию
+                        </a>
+                    </li>
+                </ul>
+                <ul class="big-menu__community-links">
+                    <li class="big-menu__community-links-item">
+                        <a href="#!" title="Telegram link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.23425 15.1987L9.235 15.1975L19.2856 6.02285C19.7267 5.62669 19.1892 5.43372 18.6036 5.79297L6.19888 13.7098L0.840732 12.0179C-0.316229 11.6596 -0.324719 10.8552 1.10048 10.2769L21.98 2.1323C22.9337 1.69429 23.8541 2.36419 23.4901 3.84066L19.9343 20.7914C19.6859 21.9958 18.9666 22.284 17.9697 21.7276L12.553 17.6791L9.94995 20.2397C9.94165 20.2478 9.9334 20.256 9.92518 20.264C9.63403 20.5507 9.39318 20.7879 8.86614 20.7879L9.23425 15.1987Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="big-menu__community-links-item">
+                        <a href="#!" title="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 20C0.541707 18.2468 1.16958 16.5799 1.7436 14.8592C-2.06148 8.18779 2.6475 0.677451 9.02561 0.0535858C15.0476 -0.535523 19.985 3.80058 20 9.7183C20.0157 15.9624 13.9746 21.2057 7.17944 19.0745C6.66686 18.9138 6.03263 18.39 5.43584 18.3548C4.60179 18.3056 3.50873 18.9059 2.66658 19.1774C1.74349 19.4751 0.940832 19.7734 0 20ZM5.64099 16.5042C11.1283 19.8427 17.699 16.0981 18.2564 10.6437C18.7608 5.70591 14.8279 1.31242 9.53839 1.69865C3.49971 2.13948 -0.127605 9.3655 3.58967 14.6535C3.2606 15.5575 2.95267 16.4826 2.66658 17.4296C3.67409 17.1371 4.60282 16.7658 5.64099 16.5042Z" fill="white"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.79487 5.09157C8.37207 6.30187 9.26489 8.09202 7.79487 8.89584C8.54142 10.478 9.77572 11.5711 11.3845 12.2888C11.9196 11.934 12.2709 11.3951 12.7179 10.9522C13.6518 11.3184 14.5247 11.7455 15.2819 12.2888C15.3598 14.0576 13.8729 14.7117 12.6153 14.6536C9.96221 14.5312 6.31571 11.171 5.43591 8.69018C4.9138 7.21818 5.51428 4.40272 7.79487 5.09157Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="big-menu__community-links-item">
+                        <a href="#!" title="vk link">
+                            <svg width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.18319 1.54648C0.636719 3.09295 0.636719 5.58197 0.636719 10.56V11.44C0.636719 16.418 0.636719 18.907 2.18319 20.4535C3.72967 22 6.21869 22 11.1967 22H12.0767C17.0548 22 19.5438 22 21.0902 20.4535C22.6367 18.907 22.6367 16.418 22.6367 11.44V10.56C22.6367 5.58197 22.6367 3.09295 21.0902 1.54648C19.5438 0 17.0548 0 12.0767 0H11.1967C6.21869 0 3.72967 0 2.18319 1.54648ZM4.34961 6.69141C4.46878 12.4114 7.32875 15.8489 12.3429 15.8489H12.6271V12.5764C14.4696 12.7597 15.8629 14.1072 16.422 15.8489H19.0255C18.3105 13.2456 16.4312 11.8064 15.2579 11.2564C16.4312 10.5781 18.0812 8.92807 18.4754 6.69141H16.1103C15.597 8.50641 14.0755 10.1564 12.6271 10.3122V6.69141H10.2621V13.0347C8.7954 12.6681 6.94377 10.8897 6.86127 6.69141H4.34961Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="big-menu__community-links-item">
+                        <a href="#!" title="Rutube link">
+                            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <mask id="mask0_919_2937" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="1" width="25" height="22">
+                                <path d="M24.5039 1H0.363281V23H24.5039V1Z" fill="white"/>
+                                </mask>
+                                <g mask="url(#mask0_919_2937)">
+                                <path d="M22.3014 5.55527C23.5174 5.55527 24.503 4.54494 24.503 3.29863C24.503 2.05232 23.5174 1.04199 22.3014 1.04199C21.0855 1.04199 20.0999 2.05232 20.0999 3.29863C20.0999 4.54494 21.0855 5.55527 22.3014 5.55527Z" fill="white"/>
+                                <path d="M15.8799 5.3457H0.406494V22.977H4.71325V17.2409H12.9657L16.7309 22.977H21.5534L17.4014 17.2144C18.6908 17.003 19.6193 16.5007 20.1866 15.7077C20.754 14.9147 21.0377 13.6459 21.0377 11.9541V10.6324C21.0377 9.62796 20.9345 8.83496 20.754 8.22696C20.5734 7.619 20.264 7.09034 19.8256 6.61453C19.3614 6.16516 18.8456 5.84793 18.2267 5.63647C17.6077 5.45144 16.8341 5.3457 15.8799 5.3457ZM15.1836 13.3551H4.71325V9.23144H15.1836C15.7767 9.23144 16.1893 9.33718 16.3956 9.52222C16.602 9.70725 16.7309 10.0509 16.7309 10.5531V12.0334C16.7309 12.5621 16.602 12.9057 16.3956 13.0908C16.1893 13.2758 15.7767 13.3551 15.1836 13.3551Z" fill="white"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="big-menu__information">
+                <ul class="big-menu__information-list">
+                    <li class="big-menu__information-item">©2024 Ricci</li>
+                    <li class="big-menu__information-item">
+                        <a class="big-menu__information-item-link" href="#!">Все права защищены</a>
+                    </li>
+                    <li class="big-menu__information-item">
+                        <a href="#!" class="big-menu__information-item-link">
+                            Политика<br> конфиденциальности
+                        </a>
+                    </li>
+                    <li class="big-menu__information-item">
+                        <div class="header__lang">
+                            <button class="header__lang-btn is-active" type="button" aria-label="Кнопка смены языка Ru">RU</button>
+                            <button class="header__lang-btn" type="button" aria-label="Кнопка смены языка Eng">ENG</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 
+    форма обратной связи
+-->
+<div class="modal-parent callbakc-modal">
+    <div class="modal-inner callbakc-modal__inner">
+        <button class="modal-close callbakc-modal__btn-close" type="button" aria-label="Кнопка скрытия модального окна">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0713 17.0713C17.4619 16.6807 17.4619 16.0476 17.0713 15.657L11.4145 10.0002L17.0713 4.34334C17.4618 3.95281 17.4618 3.31965 17.0713 2.92913C16.6808 2.5386 16.0476 2.5386 15.6571 2.92913L10.0002 8.58596L4.34341 2.92912C3.95289 2.5386 3.31973 2.5386 2.9292 2.92912C2.53868 3.31965 2.53868 3.95281 2.9292 4.34334L8.58603 10.0002L2.92915 15.657C2.53863 16.0476 2.53863 16.6807 2.92915 17.0713C3.31968 17.4618 3.95284 17.4618 4.34337 17.0713L10.0002 11.4144L15.6571 17.0713C16.0476 17.4618 16.6808 17.4618 17.0713 17.0713Z" fill="#1E1F45"/>
+            </svg>
+        </button>
+        <h2 class="title_page modal-title callbakc-modal__title">
+            Обсудим вашу задачу<br>
+            и предложим решение
+        </h2>
+        <form action="#!" class="callbakc-modal__form">
+            <fieldset class="modal-fieldset modal__elems-form">
+                <legend>Элементы формы</legend>
+                <label class="modal-label callbakc-modal__label">
+                    <input class="modal-input callbakc-modal__input" type="text" placeholder="Ваше имя*" required>
+                </label>
+                <label class="modal-label callbakc-modal__label">
+                    <input class="modal-input input-phone-mask callbakc-modal__input" type="text" placeholder="Номер телефона*" required>
+                </label>
+                <label class="modal-label callbakc-modal__label">
+                    <input class="modal-input callbakc-modal__input" type="email" placeholder="E-mail*" required>
+                </label>
+                <label class="modal-label callbakc-modal__label">
+                    <input class="modal-input callbakc-modal__input" type="text" placeholder="Организация">
+                </label>
+                <label class="modal-label callbakc-modal__label" for="">
+                    <textarea class="modal-textarea callbakc-modal__textarea" placeholder="Комментарий"></textarea>
+                </label>
+            </fieldset>
+            <fieldset class="modal-fieldset modal-fieldset_row callbakc-modal__form-bottom">
+                <legend>Блока с кнопкой и информацие по отправке формы</legend>
+                <p class="modal-description callbakc-modal__form-bottom-text">
+                    Нажимая кнопку “Отправить” вы даете согласие<br> на <a href="#!">обработку персональных данных</a>
+                </p>
+                <button class="modal-btn callbakc-modal__form-btn" type="submit">
+                    Отправить
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1608_1938)">
+                        <path d="M15.9987 0L15.5501 14.9533L14.4286 14.9159L14.8398 1.15888L1.12019 1.53271L1.08281 0.411215L15.9987 0Z" fill="#1E1F45"/>
+                        <path d="M15.0439 0.196562L0.00312805 15.2373L0.796137 16.0303L15.8369 0.989572L15.0439 0.196562Z" fill="#1E1F45"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1608_1938">
+                        <rect width="16" height="16" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<!-- 
+    пока реализовал просто так если надо переделаю, чтобы при получении данных она просто отображалась в выше стоящем модальном окне
+-->
+<div class="modal-parent sucsses-modal">
+    <div class="modal-inner">
+        <button class="modal-close sucsses-modal__btn-close" type="button" aria-label="Кнопка скрытия модального окна">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0713 17.0713C17.4619 16.6807 17.4619 16.0476 17.0713 15.657L11.4145 10.0002L17.0713 4.34334C17.4618 3.95281 17.4618 3.31965 17.0713 2.92913C16.6808 2.5386 16.0476 2.5386 15.6571 2.92913L10.0002 8.58596L4.34341 2.92912C3.95289 2.5386 3.31973 2.5386 2.9292 2.92912C2.53868 3.31965 2.53868 3.95281 2.9292 4.34334L8.58603 10.0002L2.92915 15.657C2.53863 16.0476 2.53863 16.6807 2.92915 17.0713C3.31968 17.4618 3.95284 17.4618 4.34337 17.0713L10.0002 11.4144L15.6571 17.0713C16.0476 17.4618 16.6808 17.4618 17.0713 17.0713Z" fill="#1E1F45"/>
+            </svg>
+        </button>
+        <h2 class="title_page modal-title">
+            Обсудим вашу задачу<br>
+            и предложим решение
+        </h2>
+        <p class="modal-text">
+            Заявка успешно отправлена,<br> мы свяжемся с вами<br> в ближайшее время
+        </p>
+    </div>
+</div>
+<!-- 
+    форма для запроса материалов
+-->
+<div class="modal-parent material-modal">
+    <div class="modal-inner">
+        <button class="modal-close material__btn-close" type="button" aria-label="Кнопка скрытия модального окна">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0713 17.0713C17.4619 16.6807 17.4619 16.0476 17.0713 15.657L11.4145 10.0002L17.0713 4.34334C17.4618 3.95281 17.4618 3.31965 17.0713 2.92913C16.6808 2.5386 16.0476 2.5386 15.6571 2.92913L10.0002 8.58596L4.34341 2.92912C3.95289 2.5386 3.31973 2.5386 2.9292 2.92912C2.53868 3.31965 2.53868 3.95281 2.9292 4.34334L8.58603 10.0002L2.92915 15.657C2.53863 16.0476 2.53863 16.6807 2.92915 17.0713C3.31968 17.4618 3.95284 17.4618 4.34337 17.0713L10.0002 11.4144L15.6571 17.0713C16.0476 17.4618 16.6808 17.4618 17.0713 17.0713Z" fill="#1E1F45"/>
+            </svg>
+        </button>
+        <h2 class="title_page modal-title modal-title_pb-200">
+            Оставьте свои контакты<br> и мы отправим документ<br> на ваш e-mail
+        </h2>
+        <form action="#!" class="callbakc-modal__form">
+            <fieldset class="modal-fieldset modal__elems-form">
+                <legend>Элементы формы</legend>
+                <label class="modal-label">
+                    <input class="modal-input" type="text" placeholder="Ваше имя*" required>
+                </label>
+                <label class="modal-label">
+                    <input class="modal-input" type="email" placeholder="E-mail*" required>
+                </label>
+            </fieldset>
+            <fieldset class="modal-fieldset modal-fieldset_row">
+                <legend>Блока с кнопкой и информацие по отправке формы</legend>
+                <p class="modal-description">
+                    Нажимая кнопку “Отправить” вы даете согласие<br> на <a href="#!">обработку персональных данных</a>
+                </p>
+                <button class="modal-btn" type="submit">
+                    Отправить
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1608_1938)">
+                        <path d="M15.9987 0L15.5501 14.9533L14.4286 14.9159L14.8398 1.15888L1.12019 1.53271L1.08281 0.411215L15.9987 0Z" fill="#1E1F45"/>
+                        <path d="M15.0439 0.196562L0.00312805 15.2373L0.796137 16.0303L15.8369 0.989572L15.0439 0.196562Z" fill="#1E1F45"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_1608_1938">
+                        <rect width="16" height="16" fill="white"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+</div>
+
+</body>
+
+</html>
