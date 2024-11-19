@@ -8,6 +8,8 @@ import modals from './components/modals.js';
 import phoneMask from "./components/phoneMask.js";
 import createSlider from "./components/slider.js";
 import searchOddAndEvenItems from "./components/searchOddAndEvenItems.js";
+import copyLink from "./components/copyLink.js";
+import scrollingSlider from "./components/scrollingSlider.js";
 
 scrollPage();
 paddingTopHeader();
@@ -19,3 +21,5 @@ modals();
 phoneMask();
 createSlider();
 searchOddAndEvenItems();
+copyLink();
+scrollingSlider();

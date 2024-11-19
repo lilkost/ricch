@@ -7,7 +7,16 @@ const accordions = () => {
     // 2. Блок на который происходит нажатие
     // 3. Активный класс
     const nodesAccordion = [
-        [document.querySelectorAll(".header__nav-accordion"), ".header__nav-accordion-top", "is-active"]
+        [
+            document.querySelectorAll(".header__nav-accordion"), 
+            ".header__nav-accordion-top", 
+            "is-active"
+        ],
+        [
+            document.querySelectorAll(".competencies__accordion"),
+            ".competencies__accordion-top",
+            "is-active"
+        ]
     ];
     // arr - выше описанный массив
     // isHidden - параметр который будет включать/отключать функционал открытия/скрытия блока при клике вне него, и при нажатии на esc
@@ -72,6 +81,12 @@ const accordions = () => {
             "data-id",
             "data-body-id"
         ],
+        [
+            document.querySelectorAll(".service-first__top-btn"),
+            document.querySelectorAll(".service-first__body"),
+            "data-id",
+            "data-body-id"
+        ]
     ];
 
     const accordionsOpenData = (arr) => {
