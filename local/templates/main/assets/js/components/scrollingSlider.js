@@ -27,7 +27,6 @@ const scrollingSlider = () => {
         let roundingPos = Math.round(progress * 100);
         nodeParentBg.style.backgroundPosition = `${roundingPos}% bottom`;
         // slides
-        console.log(event);
 
         swiper.setProgress(progress, 1000)
     }
@@ -35,10 +34,10 @@ const scrollingSlider = () => {
     const tlfour = gsap.timeline({
         scrollTrigger: { 
             trigger: ".history-company__scrolling-block", 
-            
-            start: "-=15%",
+
+            start: "0%",
             end: "+=300%",
-            
+
             markers: true,
             pin: true,
             scrub: 0.5,
