@@ -5,9 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ricci</title>
+
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+
     <link rel="stylesheet" href="local/templates/main/assets/css/style.min.css">
     <link rel="stylesheet" href="local/templates/main/assets/css/media.min.css">
+
     <script src="local/templates/main/assets/js/libs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Observer.min.js" integrity="sha512-pLJlXRr/H5t+k+Tjc+Qe0Z6u6psPak7rvYBdsZ0Z+kG84jn/zifMNTQBZKZlwZC1z23bifGoQWzGnI0eWBJKPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <script src="local/templates/main/assets/js/index.js" type="module"></script>
 </head>
 
@@ -229,10 +241,10 @@
             </div>
         </header>
 <main class="main">
-    <div class="top-page top-page_big-size" style="background-image: url(local/templates/main/assets/images/delete/about-bg.jpg);">
+    <div class="top-page top-page_mb-none top-page_big-size" style="background-image: url(local/templates/main/assets/images/delete/about-bg.jpg);">
         <div class="top-page__inner container">
             <h2 class="top-page__title top-page__title_border">
-                КОМПАНИЯ RICCI 
+              КОМПАНИЯ RICCI 
             </h2>
             <div class="top-page__box">
                 <p class="top-page__text-info title_page color_white">
@@ -242,6 +254,139 @@
             </div>
         </div>
         <img src="local/templates/main/assets/images/no-delete/top-page-logo.svg" alt="" class="top-page__decor-logo">
+    </div>
+    <div class="history-company">
+        <p class="history-company__description title_page color_accent">
+          МЫ СТРОИМ ВЕЛИКУЮ КОМПАНИЮ,<br>
+          КОТОРАЯ ПРИВЛЕКАЕТ, РАЗВИВАЕТ,<br>
+          ВДОХНОВЛЯЕТ И УДЕРЖИВАЕТ<br>
+          ИСКЛЮЧИТЕЛЬНЫХ ЛЮДЕЙ.
+        </p>
+        <div class="history-company__scrolling-block">
+          <div class="history-company__top container">
+            <h2 class="history-company__title title_page color_accent">
+              Наша история
+            </h2>
+            <div class="history-company__buttons">
+              <button class="history-company__btn history-company__btn_prev" type="" aria-label="Предыдущий слайд">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M-0.31117 19.9935L26.9157 -5.64737L28.8322 -3.59874L3.78608 19.9935L28.7 43.5858L26.7836 45.6344L-0.31117 19.9935Z" fill="#1E213D"/>
+                  <path d="M1.72334 21.334L40.9004 21.334L40.9004 18.5303L1.72334 18.5303L1.72334 21.334Z" fill="#1E213D"/>
+                </svg>
+              </button>
+              <button class="history-company__btn history-company__btn_next" type="" aria-label="Следующий слайд">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M40.3112 20.0084L13.0843 45.6493L11.1678 43.6007L36.2139 20.0084L11.3 -3.58382L13.2164 -5.63244L40.3112 20.0084Z" fill="#1E213D"/>
+                  <path d="M38.2767 18.668H-0.900391V21.4717H38.2767V18.668Z" fill="#1E213D"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="history-company__parent-slider">
+            <div class="history-company__slider container_left">
+              <div class="swiper-wrapper">
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2005</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Основание компании S.A. Ricci <br>
+                    в ассоциации с компанией King <br>
+                    Sturge
+                  </p>
+                  <img src="local/templates/main/assets/images/delete/historty-company/logo1.png" alt="" class="history-company__slide-logo">
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2007</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Самая крупная сделка аренды<br> офиса в Москве
+                  </p>
+                  <img src="local/templates/main/assets/images/delete/historty-company/logo2.png" alt="" class="history-company__slide-logo">
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2010</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Акционеры группы вошли в <br>
+                    рейтинг самых влиятельных <br>
+                    людей на рынке коммерческой <br>
+                    недвижимости
+                  </p>
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2011</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Образование направления<br> Ricci | Жилая недвижимость
+                  </p>
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2013</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Компания становится лидером <br>
+                    по объему реализованных <br>
+                    офисных площадей
+                  </p>
+                  <img src="local/templates/main/assets/images/delete/historty-company/logo3.png" alt="" class="history-company__slide-logo">
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2015</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Ricci входит в ТОП-5 по <br>
+                    объему сделок на рынках <br>
+                    офисной и складской <br>
+                    недвижимости
+                  </p>
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2017</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Образование направления Ricci|M&A
+                  </p>
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2020</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Крупнейшая сделка за всю <br>
+                    историю офисного рынка <br>
+                    Москвы
+                  </p>
+                  <img src="local/templates/main/assets/images/delete/historty-company/img.png" alt="" class="history-company__slide-img">
+                  <img src="local/templates/main/assets/images/delete/historty-company/logo4.png" alt="" class="history-company__slide-logo">
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2022</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Ребрендинг компании и<br> образование экосистемы
+                  </p>
+                  <img src="local/templates/main/assets/images/delete/historty-company/logo1.png" alt="" class="history-company__slide-img">
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2023</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Образование направлений: <br>
+                    Ricci | Зарубежная<br>
+                    недвижимость, Ricci | <br>
+                    Загородная недвижимость и <br>
+                    Ricci | Capital
+                  </p>
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2024</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Развитие направления<br>
+                    курортной недвижимости в <br>
+                    Ricci | Жилая недвижимость
+                  </p>
+                  <img src="local/templates/main/assets/images/delete/historty-company/logo5.png" alt="" class="history-company__slide-img">
+                </div>
+                <div class="history-company__slide swiper-slide">
+                  <h3 class="history-company__slide-title title_page color_accent">2025</h3>
+                  <p class="history-company__slide-text text_min color_accent">
+                    Юбилей компании. 20 лет.
+                  </p>
+                  <img src="local/templates/main/assets/images/delete/historty-company/logo6.png" alt="" class="history-company__slide-img">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
     <div class="about-competencies">
         <div class="about-competencies__inner container">
