@@ -26,6 +26,8 @@
         justify-content: center;
 
         padding-left: calc(calc(1.1vw + 1.1vh) * 2);
+
+        position: relative;
     }
     *{
         padding: 0;
@@ -46,29 +48,77 @@
     .item{
         list-style: none;
         font-size: calc(0.8vw + 0.8vh);
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
     }
     .item a{
         text-decoration: none;
 
         color: currentColor;
     }
+    .bottom{
+        position: absolute;
+        padding: 30px;
+        border-top: 1px solid #c4c4c4;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        line-height: 110%;
+        text-align: right;
+    }
+    .decor {
+        position: absolute;
+        
+        width: 700px;
+        height: 700px;
+        position: absolute;
+        top: 50px;
+        right: 150px;
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+    }
 </style>
 <body>
     <ul class="list">
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/">Главная</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/analitics.html">Аналитика</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/report.html">Страница отчёта</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/news-detail.html">Страница новости</a></li>
-        <li class="item"><a class="item-link" href="http://localhost:3000/realEstate.html">Недвижимость</a></li>
-        <li class="item"><a class="item-link" href="http://localhost:3000/realStateDetail.html">Страница недвижимости</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/service.html">Услуги</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/serviceFirst.html">Страница услуги</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/serviceSecond.html">Услуга второго уровня</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/contact.html">Контакты</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/about.html">О компании</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/404.html">404</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/text-page.html">Текстова страница стандартная</a></li>
-        <li class="item"><a class="item-link" href="https://lilkost.github.io/ricch/search.html">Поиск</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/1.png" href="https://lilkost.github.io/ricch/">Главная</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/2.png" href="https://lilkost.github.io/ricch/analitics.html">Аналитика</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/3.png" href="https://lilkost.github.io/ricch/report.html">Страница отчёта</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/4.png" href="https://lilkost.github.io/ricch/news-detail.html">Страница новости</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/5.png" href="http://localhost:3000/realEstate.html">Недвижимость</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/6.png" href="http://localhost:3000/realStateDetail.html">Страница недвижимости</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/7.png" href="https://lilkost.github.io/ricch/service.html">Услуги</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/8.png" href="https://lilkost.github.io/ricch/serviceFirst.html">Страница услуги</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/9.png" href="https://lilkost.github.io/ricch/serviceSecond.html">Услуга второго уровня</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/10.png" href="https://lilkost.github.io/ricch/contact.html">Контакты</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/11.png" href="https://lilkost.github.io/ricch/about.html">О компании</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/12.png" href="https://lilkost.github.io/ricch/404.html">404</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/13.png" href="https://lilkost.github.io/ricch/text-page.html">Текстова страница стандартная</a></li>
+        <li class="item"><a class="item-link" data-bg="/bg-delete/14.png" href="https://lilkost.github.io/ricch/search.html">Поиск</a></li>
     </ul>
+    <div class="bottom">
+        <h2></h2>
+    </div>
+    <div class="decor"></div>
 </body>
+
+<script>
+    const links = document.querySelectorAll(".item-link");
+    const title = document.querySelector(".bottom h2");
+
+    const b = document.querySelector(".decor");
+
+    links.forEach(link=>{
+        link.addEventListener("mouseover", ()=> {
+            const text = link.textContent;
+            const bg = String(link.getAttribute("data-bg"));
+
+            title.textContent = text;
+            b.style.background = `url(${bg})`;
+        })
+    });
+</script>
 </html>
