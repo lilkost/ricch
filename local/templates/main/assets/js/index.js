@@ -10,6 +10,7 @@ import createSlider from "./components/slider.js";
 import searchOddAndEvenItems from "./components/searchOddAndEvenItems.js";
 import copyLink from "./components/copyLink.js";
 import scrollingSlider from "./components/scrollingSlider.js";
+import marqueFn from "./components/marque.js";
 
 scrollPage();
 paddingTopHeader();
@@ -23,3 +24,4 @@ createSlider();
 searchOddAndEvenItems();
 copyLink();
 scrollingSlider();
+marqueFn();

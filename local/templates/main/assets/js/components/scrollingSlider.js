@@ -35,13 +35,6 @@ const scrollingSlider = () => {
     console.log(totalSlidesWidth)
     const tlfour = gsap.timeline({
         scrollTrigger: { 
-            // trigger: ".history-company__scrolling-block", 
-            // start: "top top",
-            // end: "-=200%",
-            // markers: true,
-            // pin: ".history-company__parent-slider",
-            // scrub: 1,
-
             trigger: ".history-company",
             start: ".history-company__top -=70%",
             end: `+=${totalSlidesWidth}`,
