@@ -30,18 +30,23 @@ const scrollingSlider = () => {
 
         swiper.setProgress(progress, 1000)
     }
-
+    const galleryItems = document.querySelectorAll(".history-company__slide");
+    const totalSlidesWidth = Array.from(galleryItems).reduce((acc, item) => acc + item.offsetWidth, 0);
+    console.log(totalSlidesWidth)
     const tlfour = gsap.timeline({
         scrollTrigger: { 
-            trigger: ".history-company__scrolling-block", 
+            // trigger: ".history-company__scrolling-block", 
+            // start: "top top",
+            // end: "-=200%",
+            // markers: true,
+            // pin: ".history-company__parent-slider",
+            // scrub: 1,
 
-            start: "0%",
-            end: "+=300%",
-
-            markers: true,
+            trigger: ".history-company",
+            start: ".history-company__top -=70%",
+            end: `+=${totalSlidesWidth}`,
             pin: true,
             scrub: 0.5,
-
             onUpdate: (event) => scrollAnimated(event)
         }
     })
