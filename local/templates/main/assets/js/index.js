@@ -12,6 +12,7 @@ import copyLink from "./components/copyLink.js";
 import scrollingSlider from "./components/scrollingSlider.js";
 import marqueFn from "./components/marque.js";
 import { useDynamicAdapt } from './components/dynamicAdapt.js';
+import textResize from "./components/textResize.js";
 
 scrollPage();
 paddingTopHeader();
@@ -27,3 +28,4 @@ copyLink();
 scrollingSlider();
 marqueFn();
 useDynamicAdapt();
+textResize();

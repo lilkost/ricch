@@ -19,6 +19,14 @@ const newsFilterSlider = () => {
                 nextEl: node.next,
                 prevEl: node.prev,
             },
+            breakpoints: {
+                769: {
+                    slidesPerView: 2,
+                },
+                280: {
+                    slidesPerView: 1,
+                }
+            }
         });
 
         // Инициализация MixItUp
