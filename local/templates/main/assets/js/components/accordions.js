@@ -117,27 +117,6 @@ const accordions = () => {
 
     nodesAccordionForId.forEach(arr=> accordionsOpenData(arr));
 
-
-    // кнопки в big-menu
-    
-    if(document.querySelector(".big-menu__links-list")) {
-        const lists = document.querySelectorAll(".big-menu__links-list");
-
-        lists.forEach(list=> {
-            const items = list.querySelectorAll(".big-menu__links-item");
-
-            items.forEach(item=> {
-                const title = item.querySelector(".big-menu__links-item-title");
-
-                if(!title) return;
-    
-                title.addEventListener("click", ()=> {
-                    list.classList.toggle("is-active");
-                });
-            })
-        });
-
-    }
 }
 
 export default accordions;

@@ -13,6 +13,7 @@ import scrollingSlider from "./components/scrollingSlider.js";
 import marqueFn from "./components/marque.js";
 import { useDynamicAdapt } from './components/dynamicAdapt.js';
 import textResize from "./components/textResize.js";
+import defaultScipts from "./components/defaultScripts.js";
 
 scrollPage();
 paddingTopHeader();
@@ -29,3 +30,4 @@ scrollingSlider();
 marqueFn();
 useDynamicAdapt();
 textResize();
+defaultScipts();

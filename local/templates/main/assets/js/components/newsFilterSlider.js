@@ -11,6 +11,7 @@ const newsFilterSlider = () => {
         const swiper = new Swiper(node.slider, {
             direction: 'horizontal',
             loop: true,
+            autoHeight: true,
 
             slidesPerView: 2,
             spaceBetween: 9,
