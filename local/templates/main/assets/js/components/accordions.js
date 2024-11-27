@@ -116,7 +116,7 @@ const accordions = () => {
     }
 
     nodesAccordionForId.forEach(arr=> accordionsOpenData(arr));
-
 }
 
 export default accordions;
+
