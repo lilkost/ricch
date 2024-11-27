@@ -24,12 +24,12 @@ const scrollingSlider = () => {
                 slidesPerView: 4.25,
                 spaceBetween: 80,
             },
-            
+
             481: {
                 slidesPerView: 2.2,
                 spaceBetween: 24,
             },
-            
+
             280:{
                 slidesPerView: 1.2,
                 spaceBetween: 16,
@@ -53,6 +53,8 @@ const scrollingSlider = () => {
     const blockParent = document.querySelector(".history-company");
     const blockParentHeight = blockParent.clientHeight / 2;
     
+    const heightSlider = document.querySelector(".history-company__parent-slider").clientHeight;
+
     const tlfour = gsap.timeline({
         scrollTrigger: {
             // trigger: ".history-company",
@@ -64,7 +66,7 @@ const scrollingSlider = () => {
             // onUpdate: (event) => scrollAnimated(event)
 
             trigger: ".history-company",
-            start: `history-company__slider -=70%`,
+            start: `.about-competencies -=${heightSlider + 30}px`,
             end: `+=${totalSlidesWidth}`,
             pin: true,
             scrub: 0.5,
