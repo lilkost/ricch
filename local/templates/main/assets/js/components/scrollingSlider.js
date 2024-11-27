@@ -11,6 +11,8 @@ const scrollingSlider = () => {
         direction: 'horizontal',
         loop: false,
         
+        allowTouchMove: false,
+
         slidesPerView: 4.25,
         spaceBetween: 80,
 
@@ -35,6 +37,7 @@ const scrollingSlider = () => {
                 spaceBetween: 16,
             }
         }
+
     });
 
     const scrollAnimated = (event) => {
@@ -53,7 +56,22 @@ const scrollingSlider = () => {
     const blockParent = document.querySelector(".history-company");
     const blockParentHeight = blockParent.clientHeight / 2;
     
-    const heightSlider = document.querySelector(".history-company__parent-slider").clientHeight;
+    let heightSlider = document.querySelector(".history-company__parent-slider").clientHeight;
+
+    // изменение размера 
+    if(window.innerWidth <=1280) {
+        heightSlider = document.querySelector(".history-company__parent-slider").clientHeight;
+    }
+
+    // if(window.innerHeight < heightSlider) {
+    //     heightSlider = window.innerHeight + (window.innerHeight / 1.7);
+    // }
+
+    const h = (
+        document.querySelector(".top-page").clientHeight 
+    );
+
+    console.log(h);
 
     const tlfour = gsap.timeline({
         scrollTrigger: {
@@ -65,8 +83,10 @@ const scrollingSlider = () => {
             // markers: true,
             // onUpdate: (event) => scrollAnimated(event)
 
+            //  -=${heightSlider + 50}px
+
             trigger: ".history-company",
-            start: `.about-competencies -=${heightSlider + 30}px`,
+            start: `${h}px`,
             end: `+=${totalSlidesWidth}`,
             pin: true,
             scrub: 0.5,
