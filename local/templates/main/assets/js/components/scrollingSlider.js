@@ -67,11 +67,15 @@ const scrollingSlider = () => {
     //     heightSlider = window.innerHeight + (window.innerHeight / 1.7);
     // }
 
-    const h = (
+    let h = (
         document.querySelector(".top-page").clientHeight 
     );
 
     console.log(h);
+
+    if(window.innerWidth <= 480) {
+        h = h / 2
+    }
 
     const tlfour = gsap.timeline({
         scrollTrigger: {
