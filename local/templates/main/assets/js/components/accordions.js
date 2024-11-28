@@ -4,18 +4,23 @@ const accordions = () => {
     // =========== функционал открытия аккордионов
     // в массив прокидывается:
     // 1. Список элемнетов
-    // 2. Блок на который происходит нажатие
+    // 2. Блок на который происходит нажатие ВАЖНО передавать именно класс
     // 3. Активный класс
     const nodesAccordion = [
-        [
-            document.querySelectorAll(".header__nav-accordion"), 
-            ".header__nav-accordion-top", 
-            "is-active"
-        ],
+        // [
+        //     document.querySelectorAll(".header__nav-accordion"), 
+        //     ".header__nav-accordion-top", 
+        //     "is-active"
+        // ],
         [
             document.querySelectorAll(".competencies__accordion"),
             ".competencies__accordion-top",
             "is-active"
+        ],
+        [
+            document.querySelectorAll(".real-estate-main__item"),
+            ".real-estate-main__main-link",
+            "is-open"
         ]
     ];
     // arr - выше описанный массив
@@ -25,7 +30,11 @@ const accordions = () => {
         arr[0].forEach(item=> {
             const top = item.querySelector(arr[1]);
 
-            top.addEventListener("click", ()=> {
+            top.addEventListener("click", (e)=> {
+                const el = e?.srcElement?.localName;
+                // проверка на ссылку (чтобы задать preventDefault)
+                if(el === 'a' && !item.classList.contains(arr[2])) e.preventDefault();
+
                 arr[0].forEach(i=> {
                     if(item !== i) {
                         i.classList.remove(arr[2]);
@@ -33,6 +42,8 @@ const accordions = () => {
                 });
 
                 item.classList.toggle(arr[2]);
+
+                
             })
         });
 
