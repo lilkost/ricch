@@ -94,7 +94,7 @@ const scrollingSlider = () => {
             end: `+=${totalSlidesWidth}`,
             pin: true,
             scrub: 0.5,
-            markers: true,
+            // markers: true,
             onUpdate: (event) => scrollAnimated(event)
         }
     })
