@@ -79,8 +79,6 @@ const modal = () => {
                 modal.classList.remove(activeClass);
             }
         });
-
-
     }
 
     // вызов функции для навешивания событий на элементы модального окна
